@@ -80,6 +80,8 @@ welcome to my small blog!!!
 
 - [http请求方法](./posts/http请求方法.md)
 
+- [imap](./posts/imap.md)
+
 - [js异步回调地狱](./posts/js异步回调地狱.md)
 
 - [kail u盘安装](./posts/kail%20u盘安装.md)
@@ -107,6 +109,8 @@ welcome to my small blog!!!
 - [pandownload作者被捕](./posts/pandownload作者被捕.md)
 
 - [pip3jupyterpythonh的问题](./posts/pip3jupyterpythonh的问题.md)
+
+- [pop3](./posts/pop3.md)
 
 - [python class](./posts/python%20class.md)
 
@@ -237,4 +241,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-21T10:14:08+00:00`
+Generate Time: `2021-03-21T10:28:52+00:00`
