@@ -62,6 +62,8 @@ welcome to my small blog!!!
 
 - [gentoo安装](./posts/gentoo安装.md)
 
+- [geo-python](./posts/geo-python.md)
+
 - [git fixup+rebase 修改某个历史 commit ](./posts/git%20fixup+rebase%20修改某个历史%20commit%20.md)
 
 - [gitlog statistic](./posts/gitlog%20statistic.md)
@@ -241,4 +243,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-21T10:36:23+00:00`
+Generate Time: `2021-03-21T10:52:28+00:00`
