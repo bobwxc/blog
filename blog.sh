@@ -20,7 +20,7 @@ do
 				echo -e "\033[32mDIR\033[0m $i"
 				echo -e "## $i\n" >> README.md 
 				
-				for j in `ls -t $i`
+				for j in `ls $i`
 				do
 						if [[ -r "./$i/$j" ]] && [[ ! -d "./$i/$j" ]]
 						then
