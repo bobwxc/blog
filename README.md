@@ -8,8 +8,6 @@ welcome to my small blog!!!
 
 ## posts
 
-- [126](./posts/126.md)
-
 - [14亿人的战争：中国人用了30年望见计算力的珠峰](./posts/14亿人的战争：中国人用了30年望见计算力的珠峰.md)
 
 - [51 1602脚位图](./posts/51%201602脚位图.md)
@@ -243,4 +241,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-21T10:52:28+00:00`
+Generate Time: `2021-03-21T12:55:46+00:00`
