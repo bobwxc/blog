@@ -241,4 +241,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-21T10:28:52+00:00`
+Generate Time: `2021-03-21T10:36:23+00:00`
