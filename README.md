@@ -2,6 +2,8 @@
 
 welcome to my small blog!!!
 
+[![autobuild-blog](https://github.com/bobwxc/blog/actions/workflows/build.yml/badge.svg)](https://github.com/bobwxc/blog/actions/workflows/build.yml)
+
 ---
 
 ## posts
@@ -42,22 +44,6 @@ welcome to my small blog!!!
 
 - [面向对象与面向过程](./posts/面向对象与面向过程.md)
 
-- [前端编译原理](./posts/前端编译原理.md)
-
-- [勒索病毒漏洞补丁及时打](./posts/勒索病毒漏洞补丁及时打.md)
-
-- [原味鸡配方](./posts/原味鸡配方.md)
-
-- [古诗十九首](./posts/古诗十九首.md)
-
-- [后浪简评 🌊](./posts/后浪简评%20🌊.md)
-
-- [城市](./posts/城市.md)
-
-- [希腊字母表 latex参考](./posts/希腊字母表%20latex参考.md)
-
-- [彻 底 变 质](./posts/彻%20底%20变%20质.md)
-
 - [总有一种力量它让我们泪流满面《南方周末》1999年新年致辞](./posts/总有一种力量它让我们泪流满面《南方周末》1999年新年致辞.md)
 
 - [我单推了，我是DD](./posts/我单推了，我是DD.md)
@@ -69,22 +55,6 @@ welcome to my small blog!!!
 - [海尔员工徒手爬楼救人](./posts/海尔员工徒手爬楼救人.md)
 
 - [满屏雪花点](./posts/满屏雪花点.md)
-
-- [python_GUI_tkinter](./posts/python_GUI_tkinter.md)
-
-- [sks-gpg安全性](./posts/sks-gpg安全性.md)
-
-- [snapper快照管理工具](./posts/snapper快照管理工具.md)
-
-- [ssh连接时长修改](./posts/ssh连接时长修改.md)
-
-- [typecho php自动切换夜间模式](./posts/typecho%20php自动切换夜间模式.md)
-
-- [typecho用户权限](./posts/typecho用户权限.md)
-
-- [ubuntu内核编译安装](./posts/ubuntu内核编译安装.md)
-
-- [vim替换](./posts/vim替换.md)
 
 - [wordlist](./posts/wordlist.md)
 
@@ -120,19 +90,21 @@ welcome to my small blog!!!
 
 - [利用API进行ipv6动态解析](./posts/利用API进行ipv6动态解析.md)
 
-- [bash脚本技巧_腾讯实验室](./posts/bash脚本技巧_腾讯实验室.md)
+- [前端编译原理](./posts/前端编译原理.md)
 
-- [bin|qpsk|wav create](./posts/bin|qpsk|wav%20create.md)
+- [勒索病毒漏洞补丁及时打](./posts/勒索病毒漏洞补丁及时打.md)
 
-- [configure --prefix](./posts/configure%20--prefix.md)
+- [原味鸡配方](./posts/原味鸡配方.md)
 
-- [deb 打包](./posts/deb%20打包.md)
+- [古诗十九首](./posts/古诗十九首.md)
 
-- [debian系邮件服务器的搭建（Postfix+Dovecot）](./posts/debian系邮件服务器的搭建（Postfix+Dovecot）.md)
+- [后浪简评 🌊](./posts/后浪简评%20🌊.md)
 
-- [docker swarm集群](./posts/docker%20swarm集群.md)
+- [城市](./posts/城市.md)
 
-- [docker](./posts/docker.md)
+- [希腊字母表 latex参考](./posts/希腊字母表%20latex参考.md)
+
+- [彻 底 变 质](./posts/彻%20底%20变%20质.md)
 
 - [ed25519 ssh key](./posts/ed25519%20ssh%20key.md)
 
@@ -192,6 +164,22 @@ welcome to my small blog!!!
 
 - [python class](./posts/python%20class.md)
 
+- [python_GUI_tkinter](./posts/python_GUI_tkinter.md)
+
+- [sks-gpg安全性](./posts/sks-gpg安全性.md)
+
+- [snapper快照管理工具](./posts/snapper快照管理工具.md)
+
+- [ssh连接时长修改](./posts/ssh连接时长修改.md)
+
+- [typecho php自动切换夜间模式](./posts/typecho%20php自动切换夜间模式.md)
+
+- [typecho用户权限](./posts/typecho用户权限.md)
+
+- [ubuntu内核编译安装](./posts/ubuntu内核编译安装.md)
+
+- [vim替换](./posts/vim替换.md)
+
 - [14亿人的战争：中国人用了30年望见计算力的珠峰](./posts/14亿人的战争：中国人用了30年望见计算力的珠峰.md)
 
 - [51 1602脚位图](./posts/51%201602脚位图.md)
@@ -220,6 +208,20 @@ welcome to my small blog!!!
 
 - [Update DNS Records | namesilo](./posts/Update%20DNS%20Records%20|%20namesilo.md)
 
+- [bash脚本技巧_腾讯实验室](./posts/bash脚本技巧_腾讯实验室.md)
+
+- [bin|qpsk|wav create](./posts/bin|qpsk|wav%20create.md)
+
+- [configure --prefix](./posts/configure%20--prefix.md)
+
+- [deb 打包](./posts/deb%20打包.md)
+
+- [debian系邮件服务器的搭建（Postfix+Dovecot）](./posts/debian系邮件服务器的搭建（Postfix+Dovecot）.md)
+
+- [docker swarm集群](./posts/docker%20swarm集群.md)
+
+- [docker](./posts/docker.md)
+
 - [126](./posts/126.md)
 
 
@@ -235,4 +237,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-21T10:01:14+00:00`
+Generate Time: `2021-03-21T10:10:54+00:00`
