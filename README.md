@@ -136,6 +136,8 @@ welcome to my small blog!!!
 
 - [三坑圈的两件事](./posts/三坑圈的两件事.md)
 
+- [中华人民共和国国民经济和社会发展 第十四个五年规划和2035年远景目标纲要](./posts/中华人民共和国国民经济和社会发展%20第十四个五年规划和2035年远景目标纲要.md)
+
 - [中华人民共和国民法典2020](./posts/中华人民共和国民法典2020.md)
 
 - [中国中波广播电台频率表2020](./posts/中国中波广播电台频率表2020.md)
@@ -173,6 +175,8 @@ welcome to my small blog!!!
 - [古诗十九首](./posts/古诗十九首.md)
 
 - [后浪简评 🌊](./posts/后浪简评%20🌊.md)
+
+- [在延安文艺座谈会上的讲话](./posts/在延安文艺座谈会上的讲话.txt)
 
 - [城市](./posts/城市.md)
 
@@ -241,4 +245,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-21T12:55:46+00:00`
+Generate Time: `2021-03-22T08:48:59+00:00`
