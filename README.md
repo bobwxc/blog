@@ -18,6 +18,8 @@ welcome to my small blog!!!
 
 - [BT symbol](./posts/BT%20symbol.md)
 
+- [Create-makedoc.yml-README.md-badge](./posts/Create-makedoc.yml-README.md-badge.md)
+
 - [Debian 项目宪章（1.7版本）](./posts/Debian%20项目宪章（1.7版本）.md)
 
 - [GFW 技术评论](./posts/GFW%20技术评论.md)
@@ -245,4 +247,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-22T08:48:59+00:00`
+Generate Time: `2021-03-24T04:29:25+00:00`
