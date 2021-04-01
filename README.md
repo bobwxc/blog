@@ -42,6 +42,8 @@ welcome to my small blog!!!
 
 - [bin|qpsk|wav create](./posts/bin|qpsk|wav%20create.md)
 
+- [cgit on debian](./posts/cgit%20on%20debian.md)
+
 - [configure --prefix](./posts/configure%20--prefix.md)
 
 - [deb 打包](./posts/deb%20打包.md)
@@ -247,4 +249,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-03-24T04:29:25+00:00`
+Generate Time: `2021-04-01T02:57:27+00:00`
