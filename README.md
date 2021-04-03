@@ -80,8 +80,6 @@ welcome to my small blog!!!
 
 - [html5语义化标签](./posts/html5语义化标签.md)
 
-- [html5语义化标签](./posts/html5语义化标签.md~)
-
 - [http请求方法](./posts/http请求方法.md)
 
 - [imap](./posts/imap.md)
@@ -89,6 +87,8 @@ welcome to my small blog!!!
 - [js异步回调地狱](./posts/js异步回调地狱.md)
 
 - [kail u盘安装](./posts/kail%20u盘安装.md)
+
+- [linux-git-repo](./posts/linux-git-repo.md)
 
 - [linux目录结构](./posts/linux目录结构.md)
 
@@ -249,4 +249,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-04-01T02:57:27+00:00`
+Generate Time: `2021-04-03T10:33:43+00:00`
