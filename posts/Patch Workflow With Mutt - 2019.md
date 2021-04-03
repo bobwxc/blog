@@ -58,7 +58,7 @@ tags:
   alias muttl='mutt -f ~/mail_linux/'
 ```
 
-这样我只要执行mutt1命令，就能直接打开这个目录：
+这样我只要执行muttl命令，就能直接打开这个目录：
 
 
 
