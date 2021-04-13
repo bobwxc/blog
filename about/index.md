@@ -8,8 +8,8 @@ layout: about`
 
 ### bobwxc_blog
 
-a backup statics blog
+a small statics blog
 
 ---
 
-2020  bobwxc
+2020-2021  bobwxc
