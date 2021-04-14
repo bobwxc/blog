@@ -249,6 +249,6 @@ welcome to my small blog!!!
 
 ---
 
-Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
+Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-04-14T06:05:46+00:00`
+Generate Time: `2021-04-14T07:22:07+00:00`

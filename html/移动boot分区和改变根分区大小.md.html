@@ -11,8 +11,17 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
+<nav id="TOC">
+<ul>
+<li><a href="#引导修改分区">引导，修改分区</a></li>
+<li><a href="#切换chroot">切换chroot</a></li>
+<li><a href="#解决引导">解决引导</a></li>
+<li><a href="#更新开机磁盘挂载">更新开机磁盘挂载</a></li>
+</ul>
+</nav>
 <p>由于当初装系统分区没弄好，boot分区被分在home后面，而root又太大了，导致需要修改</p>
 <h2 id="引导修改分区">引导，修改分区</h2>
 <p>用liveCD引导机器 修改分区</p>

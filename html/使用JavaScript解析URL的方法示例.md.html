@@ -11,8 +11,30 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
+<nav id="TOC">
+<ul>
+<li><a href="#获得url">获得url</a></li>
+<li><a href="#创建-url-对象">创建 URL 对象</a></li>
+<li><a href="#url-对象的结构">URL 对象的结构</a><ul>
+<li><a href="#href">href</a></li>
+<li><a href="#协议-protocol">协议 (protocol)</a></li>
+<li><a href="#主机名hostname">主机名（hostname）</a></li>
+<li><a href="#端口port">端口（port）</a></li>
+<li><a href="#主机host">主机（host）</a></li>
+<li><a href="#来源origin">来源（origin）</a></li>
+<li><a href="#文件名-pathname">文件名 (pathname)</a></li>
+<li><a href="#锚点hash">锚点（hash）</a></li>
+<li><a href="#查询参数-search">查询参数 (search)</a></li>
+</ul></li>
+<li><a href="#扩展">扩展</a><ul>
+<li><a href="#获取-url-的中参数">获取 URL 的中参数</a></li>
+<li><a href="#修改-url-的中某个参数值">修改 URL 的中某个参数值</a></li>
+</ul></li>
+</ul>
+</nav>
 <h2 id="获得url">获得url</h2>
 <pre><code>console.log(window.location);</code></pre>
 <p>它返回的是一个 URL 对象。使用这个 URL 对象，我们可以解析 URL 的不同部分，接下来就会讲到。</p>

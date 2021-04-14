@@ -11,8 +11,23 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
+<nav id="TOC">
+<ul>
+<li><a href="#概念">1.概念</a></li>
+<li><a href="#环境">2.环境</a></li>
+<li><a href="#查看openssl以及默认openssl.cnf存放位置">3.查看openssl以及默认openssl.cnf存放位置</a></li>
+<li><a href="#查看配置文件-vim-usrlibsslopenssl.cnf">4.查看配置文件 vim /usr/lib/ssl/openssl.cnf</a></li>
+<li><a href="#创建为根证书ca所需的目录及文件根据配置文件创建democa文件夹以及各种文件">5.创建为根证书CA所需的目录及文件，根据配置文件创建demoCA文件夹，以及各种文件</a></li>
+<li><a href="#指明证书的开始编号">6.指明证书的开始编号</a></li>
+<li><a href="#生成根证书的私钥注意私钥的文件名与存放位置要与配置文件中的设置相匹配">7.生成根证书的私钥（注意：私钥的文件名与存放位置要与配置文件中的设置相匹配）</a></li>
+<li><a href="#配置服务器证书ssl">9.配置服务器证书ssl</a><ul>
+<li><a href="#信息不匹配问题">信息不匹配问题</a></li>
+</ul></li>
+</ul>
+</nav>
 <blockquote>
 <p>From <a href="https://www.cnblogs.com/limengchun/p/12177437.html" class="uri">https://www.cnblogs.com/limengchun/p/12177437.html</a></p>
 </blockquote>

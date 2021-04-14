@@ -11,12 +11,25 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">deb 打包</h1>
 <p class="date">2020-07-05 21:50:41</p>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#deb-包的文件结构">deb 包的文件结构</a><ul>
+<li><a href="#control文件">control文件</a></li>
+<li><a href="#preinst文件">preinst文件</a></li>
+<li><a href="#postinst文件">postinst文件</a></li>
+<li><a href="#prerm-文件">prerm 文件</a></li>
+<li><a href="#postrm文件">postrm文件</a></li>
+</ul></li>
+<li><a href="#打包dpkg--b">打包dpkg -b</a></li>
+</ul>
+</nav>
 <h2 id="deb-包的文件结构">deb 包的文件结构</h2>
 <p>deb包本身由三部分组成：</p>
 <table>

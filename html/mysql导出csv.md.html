@@ -74,12 +74,24 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">mysql导出csv</h1>
 <p class="date">2020-06-29 21:44:16</p>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#导出到csv">导出到csv</a></li>
+<li><a href="#secure_file_priv">secure_file_priv</a></li>
+<li><a href="#清理binlog">清理binlog</a><ul>
+<li><a href="#查看binlog日志">查看binlog日志</a></li>
+<li><a href="#删除某个日志文件之前的所有日志文件">删除某个日志文件之前的所有日志文件</a></li>
+<li><a href="#关闭mysql的binlog日志">关闭mysql的binlog日志</a></li>
+</ul></li>
+</ul>
+</nav>
 <h2 id="导出到csv">导出到csv</h2>
 <p>通过mysql客户端shell连接到服务器，选择使用的数据库，输入sql代码：</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" title="1">mysql<span class="op">&gt;</span> <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> test_info   </a>

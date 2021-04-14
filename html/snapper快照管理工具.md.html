@@ -11,12 +11,37 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">snapper快照管理工具</h1>
 <p class="date">2020-06-21 00:14:18</p>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#配置文件">配置文件</a><ul>
+<li><a href="#创建配置文件">创建配置文件</a></li>
+<li><a href="#配置文件模板">配置文件模板</a></li>
+<li><a href="#列出所有的配置文件">列出所有的配置文件</a></li>
+<li><a href="#配置文件参数">配置文件参数</a></li>
+</ul></li>
+<li><a href="#使用快照">使用快照</a><ul>
+<li><a href="#文件位置">文件位置</a></li>
+<li><a href="#快照种类">快照种类</a></li>
+<li><a href="#创建快照">创建快照</a></li>
+<li><a href="#查看快照">查看快照</a></li>
+<li><a href="#比对快照的差异">比对快照的差异</a></li>
+<li><a href="#删除快照">删除快照</a></li>
+<li><a href="#回滚快照">回滚快照</a></li>
+</ul></li>
+<li><a href="#快照的自动拍摄与清理">快照的自动拍摄与清理</a><ul>
+<li><a href="#开启快照自动拍摄">开启快照自动拍摄</a></li>
+<li><a href="#开启快照自动清理">开启快照自动清理</a></li>
+<li><a href="#修改快照自动清理的参数">修改快照自动清理的参数</a></li>
+</ul></li>
+</ul>
+</nav>
 <h2 id="配置文件">配置文件</h2>
 <p>Snapper 需要为每一个卷创建一个配置文件，配置文件定义了快照的创建和维护规则。 Snapper 的每一个操作都是根据卷对应的配置文件进行的。</p>
 <h3 id="创建配置文件">创建配置文件</h3>

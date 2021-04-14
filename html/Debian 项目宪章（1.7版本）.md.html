@@ -11,12 +11,67 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Debian 项目宪章（1.7版本）</h1>
 <p class="date">2021-02-13 23:03:19</p>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#section"></a><ul>
+<li><a href="#简介">1. 简介</a></li>
+<li><a href="#决策机构与决策人">2. 决策机构与决策人</a><ul>
+<li><a href="#一般规则">2.1. 一般规则</a></li>
+</ul></li>
+<li><a href="#个人开发人员">3. 个人开发人员</a><ul>
+<li><a href="#权力">3.1. 权力</a></li>
+<li><a href="#组成和任命">3.2. 组成和任命</a></li>
+<li><a href="#程序">3.3. 程序</a></li>
+</ul></li>
+<li><a href="#一般性决议或选举选出的开发人员">4. 一般性决议或选举选出的开发人员</a><ul>
+<li><a href="#权力-1">4.1. 权力</a></li>
+<li><a href="#程序-1">4.2. 程序</a></li>
+</ul></li>
+<li><a href="#项目负责人">5. 项目负责人</a><ul>
+<li><a href="#权力-2">5.1. 权力</a></li>
+<li><a href="#任命">5.2. 任命</a></li>
+<li><a href="#程序-2">5.3. 程序</a></li>
+</ul></li>
+<li><a href="#技术委员会">6. 技术委员会</a><ul>
+<li><a href="#权力-3">6.1. 权力</a></li>
+<li><a href="#组成">6.2. 组成</a></li>
+<li><a href="#程序-3">6.3. 程序</a></li>
+</ul></li>
+<li><a href="#项目秘书">7. 项目秘书</a><ul>
+<li><a href="#权力-4">7.1. 权力</a></li>
+<li><a href="#任命-1">7.2. 任命</a></li>
+<li><a href="#程序-4">7.3. 程序</a></li>
+</ul></li>
+<li><a href="#项目负责人代表">8. 项目负责人代表</a><ul>
+<li><a href="#权力-5">8.1. 权力</a></li>
+<li><a href="#任命-2">8.2. 任命</a></li>
+<li><a href="#程序-5">8.3. 程序</a></li>
+</ul></li>
+<li><a href="#debian-信托资产">9. Debian 信托资产</a><ul>
+<li><a href="#与关联组织的关系">9.1. 与关联组织的关系</a></li>
+<li><a href="#权利">9.2. 权利</a></li>
+<li><a href="#受信组织">9.3. 受信组织</a></li>
+</ul></li>
+<li><a href="#a.-标准决议程序">A. 标准决议程序</a><ul>
+<li><a href="#a.0.-提案">A.0. 提案</a></li>
+<li><a href="#a.1.-讨论与修正">A.1. 讨论与修正</a></li>
+<li><a href="#a.2.-要求投票">A.2. 要求投票</a></li>
+<li><a href="#a.3.-表决程序">A.3. 表决程序</a></li>
+<li><a href="#a.4.-撤回决议或不被接受的修正案">A.4. 撤回决议或不被接受的修正案</a></li>
+<li><a href="#a.5.-到期">A.5. 到期</a></li>
+<li><a href="#a.6.-计票">A.6. 计票</a></li>
+</ul></li>
+<li><a href="#b.-措辞和行文">B. 措辞和行文</a></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="section"></h1>
 <p><img src="data:image/png;base64,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" alt="debian logo" /> Debian 项目宪章（1.7版本）</p>
 <p>现行1.7版本 批准于2016年08月14日。取代以下历史版本：<a href="https://www.debian.org/devel/constitution.1.6">1.6版本</a> 批准于2015年12月13日，<a href="https://www.debian.org/devel/constitution.1.5">1.5版本</a> 批准于2015年01月09日，<a href="https://www.debian.org/devel/constitution.1.4">1.4版本</a> 批准于2007年10月07日，<a href="https://www.debian.org/devel/constitution.1.3">1.3版本</a> 批准于2006年09月24日，<a href="https://www.debian.org/devel/constitution.1.2">1.2版本</a> 批准于2003年10月29日，<a href="https://www.debian.org/devel/constitution.1.1">1.1版本</a> 批准于2003年06月21日 和<a href="https://www.debian.org/devel/constitution.1.0">1.0版本</a> 批准于1998年12月02日。</p>

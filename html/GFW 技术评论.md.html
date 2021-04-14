@@ -12,12 +12,50 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">GFW 技术评论</h1>
 <p class="date">2020-12-01</p>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#gfw-技术评论">GFW 技术评论</a><ul>
+<li><a href="#深入理解gfw路由扩散技术">深入理解GFW：路由扩散技术</a><ul>
+<li><a href="#gfw路由扩散技术的工作原理">GFW路由扩散技术的工作原理</a></li>
+<li><a href="#评价">评价</a></li>
+<li><a href="#测量">测量</a></li>
+<li><a href="#参考文献">参考文献</a></li>
+</ul></li>
+<li><a href="#深入理解gfwdns污染">深入理解GFW：DNS污染</a><ul>
+<li><a href="#初识dns污染">初识DNS污染</a></li>
+<li><a href="#观测dns污染">观测DNS污染</a></li>
+<li><a href="#伪包特征">伪包特征</a></li>
+<li><a href="#触发条件">触发条件</a></li>
+<li><a href="#现状分析">现状分析</a></li>
+<li><a href="#dns劫持的防范和利用">DNS劫持的防范和利用</a></li>
+<li><a href="#参考文献-1">参考文献</a></li>
+</ul></li>
+<li><a href="#深入理解gfw内部结构">深入理解GFW：内部结构</a><ul>
+<li><a href="#线路接入">线路接入</a></li>
+<li><a href="#负载平衡">负载平衡</a></li>
+<li><a href="#一个关于窗口值的实验">一个关于窗口值的实验</a></li>
+<li><a href="#数据处理">数据处理</a></li>
+<li><a href="#响应机制">响应机制</a></li>
+<li><a href="#日志记录">日志记录</a></li>
+<li><a href="#规模估计">规模估计</a></li>
+<li><a href="#结论">结论</a></li>
+<li><a href="#注释">注释</a></li>
+</ul></li>
+<li><a href="#http-url-深度关键词检测">HTTP URL 深度关键词检测</a><ul>
+<li><a href="#gfw的tcp协议阻断方式">GFW的TCP协议阻断方式</a></li>
+<li><a href="#url关键词的检测">URL关键词的检测</a></li>
+<li><a href="#深度检测关键词和其他关键词检测">深度检测关键词和其他关键词检测</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="gfw-技术评论">GFW 技术评论</h1>
 <blockquote>
 <p><em>编者按：</em>从原链接辑来。此文成文时间甚早，根据自身标注的日期大约在2009～2010年之间。</p>

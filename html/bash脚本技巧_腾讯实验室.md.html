@@ -11,8 +11,20 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <link rel="stylesheet" href="../static/normal.css" />
 </head>
 <body>
+<nav id="TOC">
+<ul>
+<li><a href="#编写可靠-bash-脚本的一些技巧">编写可靠 bash 脚本的一些技巧</a><ul>
+<li><a href="#set--x--e--u--o-pipefail"><strong>0. set -x -e -u -o pipefail</strong></a></li>
+<li><a href="#防止重叠运行"><strong>1. 防止重叠运行</strong></a></li>
+<li><a href="#意外退出时杀掉所有子进程"><strong>2. 意外退出时杀掉所有子进程</strong></a></li>
+<li><a href="#timeout-限制运行时间"><strong>3. timeout 限制运行时间</strong></a></li>
+<li><a href="#连续管道时考虑使用-tee-将中间结果落盘以便查问题"><strong>4. 连续管道时，考虑使用 tee 将中间结果落盘，以便查问题</strong></a></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="编写可靠-bash-脚本的一些技巧">编写可靠 bash 脚本的一些技巧</h1>
 <p><a href="https://www.zhihu.com/org/teng-xun-ji-zhu-gong-cheng">腾讯技术工程</a></p>
 <p>1,020 人赞同了该文章</p>
