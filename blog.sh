@@ -31,7 +31,7 @@ do
 						then
 								echo -e "  \033[33mFILE\033[0m $j"
 
-								pandoc -s ./$i/$j -o ./$i/$j.html
+								pandoc -s --toc --css ../static/normal.css ./$i/$j -o ./$i/$j.html
 								
 								s="- [${j%.*}]"
 								a=`echo "(./html/$j.html)\n" | sed "s/ /%20/g"`
@@ -63,10 +63,10 @@ fi
 
 # foot note
 echo -e '\n---\n' >> README.md
-echo -e "Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).\n" >> README.md
+echo -e "Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).\n" >> README.md
 echo Generate Time: \`$(date -u --iso-8601=seconds)\` >> README.md
 
-pandoc -s README.md -o index.html
+pandoc -s --css ./static/normal.css README.md -o index.html
 
 IFS=$SAVEIFS
 
