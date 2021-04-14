@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rf ./html
+mkdir ./html
+
 SALVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
@@ -15,22 +18,35 @@ fi
 # body
 for i in `ls -r ./`
 do
-		if [[ $i != 'static' ]] && [[ -d $i ]]
+		if [[ $i != 'static' ]] && [[ $i != 'html' ]] && [[ -d $i ]]
 		then
 				echo -e "\033[32mDIR\033[0m $i"
 				echo -e "## $i\n" >> README.md 
+
+				rm ./$i/*.html
 				
 				for j in `ls $i`
 				do
 						if [[ -r "./$i/$j" ]] && [[ ! -d "./$i/$j" ]]
 						then
 								echo -e "  \033[33mFILE\033[0m $j"
+
+								pandoc -s ./$i/$j -o ./$i/$j.html
+								
 								s="- [${j%.*}]"
-								a=`echo "(./$i/$j)\n" | sed "s/ /%20/g"`
+								a=`echo "(./html/$j.html)\n" | sed "s/ /%20/g"`
 								echo -e "$s$a" >> README.md
 						fi
 
+						if [[ -d "./$i/$j" ]]
+						then
+								cp -r ./$i/$j ./html/
+						fi
+						
+
 				done
+
+				mv ./$i/*.html ./html/
 
 				echo -e "\n" >> README.md
 		fi
@@ -49,6 +65,8 @@ fi
 echo -e '\n---\n' >> README.md
 echo -e "Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).\n" >> README.md
 echo Generate Time: \`$(date -u --iso-8601=seconds)\` >> README.md
+
+pandoc -s README.md -o index.html
 
 IFS=$SAVEIFS
 
