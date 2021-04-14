@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>git fixup+rebase 修改某个历史 commit</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">git fixup+rebase 修改某个历史 commit</h1>
+<p class="date">2021-02-18 13:54:52</p>
+</header>
+<h1 id="git-fixuprebase-修改某个历史-commit">git fixup+rebase 修改某个历史 commit</h1>
+<h2 id="fixup-rebase">fixup + rebase</h2>
+<p>修改某个历史 commit而不破坏其他 commits. 可参考如下做法：</p>
+<p>以如下 git log 为例，修改 <code>de09c7e</code> 该 commit ：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1">... <span class="co">// latest commit</span></a>
+<a class="sourceLine" id="cb1-2" title="2">...</a>
+<a class="sourceLine" id="cb1-3" title="3">commit de<span class="er">09c7e0768026ba700c8c52a3eb8dafdb79bbe6</span></a>
+<a class="sourceLine" id="cb1-4" title="4">Author: xxx</a>
+<a class="sourceLine" id="cb1-5" title="5">Date:   Tue Nov <span class="dv">10</span> <span class="dv">15</span>:<span class="dv">42</span>:<span class="dv">26</span> <span class="dv">2020</span> +<span class="er">0800</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7">    feat: xxx</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9">commit ff<span class="dv">3380</span><span class="er">b6ed6669859fc02fd4c55e381ea7ce0c1f</span></a>
+<a class="sourceLine" id="cb1-10" title="10">Author: xxx</a>
+<a class="sourceLine" id="cb1-11" title="11">Date:   Tue Nov <span class="dv">10</span> <span class="dv">15</span>:<span class="dv">37</span>:<span class="dv">40</span> <span class="dv">2020</span> +<span class="er">0800</span></a>
+<a class="sourceLine" id="cb1-12" title="12"></a>
+<a class="sourceLine" id="cb1-13" title="13">    fix: xxx</a>
+<a class="sourceLine" id="cb1-14" title="14">...</a>
+<a class="sourceLine" id="cb1-15" title="15">... <span class="co">// older commit</span></a>
+<a class="sourceLine" id="cb1-16" title="16"><span class="dv">123456789101112131415</span></a></code></pre></div>
+<ol type="1">
+<li><p>本地针对 commit: <code>de09c7e</code> 修改好</p></li>
+<li><p>提交修改到本地仓库</p>
+<pre class="shell"><code>git add .
+git commit --fixup=de09c7e0768026ba700c8c52a3eb8dafdb79bbe6
+12</code></pre>
+<p>这样本地会多出一个 <code>!fixup</code> 开头的 commit.</p>
+<blockquote>
+<p><code>--fixup=</code> 后也可以接 HEAD~n, HEAD^n, commidID 等, 即：</p>
+<pre class="shell"><code>git commit --fixup=HEAD~n
+git commit --fixup=HEAD^n
+git commit --fixup=commitID
+123</code></pre>
+<p>commitID 可以只选前 6 位</p>
+</blockquote></li>
+<li><p>完成对 fixup 的 commit 的 rebase</p>
+<pre class="shell"><code>git rebase -i --autosquash ff3380b6ed6669859fc02fd4c55e381ea7ce0c1f
+# git rebase -i --autosquash 命令中的 commitID 不应是需要 fixup 的 commit, 而是需要比 fixup 更老的 commit。
+12</code></pre>
+<blockquote>
+<p><code>git rebase -i --autosquash</code> 后也可以接 HEAD~n, HEAD^n, commidID 等, 即：</p>
+<pre class="shell"><code>git rebase -i --autosquash HEAD~n
+git rebase -i --autosquash HEAD^n
+git rebase -i --autosquash commitID
+123</code></pre>
+<p>commitID 可以只选前 6 位</p>
+</blockquote></li>
+<li><p>修改提交标题注释</p>
+<p>在弹出的编辑器中将需要修改备注的条目的pick改成r（reword），保存退出。</p>
+<p>然后依次修改提交标题注释。</p></li>
+</ol>
+<h2 id="全局的rebase设置">全局的rebase设置</h2>
+<p>为了简化后续 rebase, 可配置全局的 <code>rebase.autosquash</code></p>
+<pre class="shell"><code>git config --global rebase.autosquash true
+1</code></pre>
+<p>这样在本地 <code>~/.gitconfig</code> 文件中会多出如下内容：</p>
+<pre class="shell"><code>[rebase]
+  autosquash = true
+12</code></pre>
+<blockquote>
+<p>也可以手动修改 <code>~/.gitconfig</code> 文件</p>
+</blockquote>
+<p>这样之后如下的操作：</p>
+<pre class="shell"><code>git rebase -i --autosquash HEAD~n
+1</code></pre>
+<p>均可以替换为：</p>
+<pre class="shell"><code>git rebase -i HEAD~n
+1</code></pre>
+</body>
+</html>

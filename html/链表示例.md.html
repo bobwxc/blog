@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>链表示例</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">链表示例</h1>
+<p class="date">2020-05-15 12:43:35</p>
+</header>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">struct</span> link *AppendNode (<span class="kw">struct</span> link *head);</a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="dt">void</span> DisplyNode (<span class="kw">struct</span> link *head);</a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="dt">void</span> DeletMemory (<span class="kw">struct</span> link *head);</a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="kw">struct</span> link</a>
+<a class="sourceLine" id="cb1-9" title="9">{</a>
+<a class="sourceLine" id="cb1-10" title="10">    <span class="dt">int</span> data;</a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="kw">struct</span> link *next;</a>
+<a class="sourceLine" id="cb1-12" title="12">};</a>
+<a class="sourceLine" id="cb1-13" title="13"></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="dt">int</span> main(<span class="dt">void</span>)</a>
+<a class="sourceLine" id="cb1-15" title="15">{</a>
+<a class="sourceLine" id="cb1-16" title="16">    <span class="dt">int</span> i = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-17" title="17">    <span class="dt">char</span> c;</a>
+<a class="sourceLine" id="cb1-18" title="18">    <span class="kw">struct</span> link *head = NULL;    <span class="co">//链表头指针</span></a>
+<a class="sourceLine" id="cb1-19" title="19">    printf(<span class="st">&quot;Do you want to append a new node(Y/N)?&quot;</span>);</a>
+<a class="sourceLine" id="cb1-20" title="20">    scanf(<span class="st">&quot; %c&quot;</span>, &amp;c);            </a>
+<a class="sourceLine" id="cb1-21" title="21">    <span class="cf">while</span> (c == <span class="ch">&#39;Y&#39;</span> || c == <span class="ch">&#39;y&#39;</span>)</a>
+<a class="sourceLine" id="cb1-22" title="22">    {</a>
+<a class="sourceLine" id="cb1-23" title="23">        head = AppendNode(head);<span class="co">//向head为头指针的链表末尾添加节点</span></a>
+<a class="sourceLine" id="cb1-24" title="24">        DisplyNode(head);        <span class="co">//显示当前链表中的各节点的信息</span></a>
+<a class="sourceLine" id="cb1-25" title="25">        printf(<span class="st">&quot;Do your want to append a new node(Y/N)&quot;</span>);</a>
+<a class="sourceLine" id="cb1-26" title="26">        scanf(<span class="st">&quot; %c&quot;</span>, &amp;c);        </a>
+<a class="sourceLine" id="cb1-27" title="27">        i++;</a>
+<a class="sourceLine" id="cb1-28" title="28">    }</a>
+<a class="sourceLine" id="cb1-29" title="29">    printf(<span class="st">&quot;%d new nodes have been apended&quot;</span>, i);</a>
+<a class="sourceLine" id="cb1-30" title="30">    DeletMemory(head);    <span class="co">//释放所有动态分配的内存</span></a>
+<a class="sourceLine" id="cb1-31" title="31"></a>
+<a class="sourceLine" id="cb1-32" title="32">    <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb1-33" title="33">}</a>
+<a class="sourceLine" id="cb1-34" title="34"><span class="co">/* 函数功能：新建一个节点并添加到链表末尾，返回添加节点后的链表的头指针 */</span></a>
+<a class="sourceLine" id="cb1-35" title="35"><span class="kw">struct</span> link *AppendNode(<span class="kw">struct</span> link *head)</a>
+<a class="sourceLine" id="cb1-36" title="36">{</a>
+<a class="sourceLine" id="cb1-37" title="37">    <span class="kw">struct</span> link *p = NULL, *pr = head;</a>
+<a class="sourceLine" id="cb1-38" title="38">    <span class="dt">int</span> data;</a>
+<a class="sourceLine" id="cb1-39" title="39">    p = (<span class="kw">struct</span> link *)malloc(<span class="kw">sizeof</span>(<span class="kw">struct</span> link));<span class="co">//让p指向新建的节点</span></a>
+<a class="sourceLine" id="cb1-40" title="40">    <span class="cf">if</span> (p == NULL)        <span class="co">//若新建节点申请内存失败，则退出程序</span></a>
+<a class="sourceLine" id="cb1-41" title="41">    {</a>
+<a class="sourceLine" id="cb1-42" title="42">        printf(<span class="st">&quot;No enough memory to allocate</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb1-43" title="43">        exit(<span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb1-44" title="44">    }</a>
+<a class="sourceLine" id="cb1-45" title="45">    <span class="cf">if</span> (head == NULL)    <span class="co">//若原链表为空表</span></a>
+<a class="sourceLine" id="cb1-46" title="46">    {</a>
+<a class="sourceLine" id="cb1-47" title="47">        head = p;        <span class="co">//将新建节点置为头节点</span></a>
+<a class="sourceLine" id="cb1-48" title="48">    }</a>
+<a class="sourceLine" id="cb1-49" title="49">    <span class="cf">else</span>                <span class="co">//若原链表为非空，则将新建节点添加到表尾</span></a>
+<a class="sourceLine" id="cb1-50" title="50">    {</a>
+<a class="sourceLine" id="cb1-51" title="51">        <span class="cf">while</span> (pr-&gt;next != NULL)<span class="co">//若未到表尾，则移动pr直到pr指向表尾</span></a>
+<a class="sourceLine" id="cb1-52" title="52">        {</a>
+<a class="sourceLine" id="cb1-53" title="53">            pr = pr-&gt;next;        <span class="co">//让pr指向下一个节点</span></a>
+<a class="sourceLine" id="cb1-54" title="54">        }</a>
+<a class="sourceLine" id="cb1-55" title="55">        pr-&gt;next = p;            <span class="co">//让末节点的指针指向新建的节点</span></a>
+<a class="sourceLine" id="cb1-56" title="56">    }</a>
+<a class="sourceLine" id="cb1-57" title="57">    printf(<span class="st">&quot;Input node data</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb1-58" title="58">    scanf(<span class="st">&quot;%d&quot;</span>, &amp;data); <span class="co">//输入节点数据</span></a>
+<a class="sourceLine" id="cb1-59" title="59">    p-&gt;data = data;        <span class="co">//将新建节点的数据域赋值为输入的节点数据值</span></a>
+<a class="sourceLine" id="cb1-60" title="60">    p-&gt;next = NULL;        <span class="co">//将新建的节点置为表尾</span></a>
+<a class="sourceLine" id="cb1-61" title="61">    <span class="cf">return</span> head;        <span class="co">//返回添加节点后的链表的头指针</span></a>
+<a class="sourceLine" id="cb1-62" title="62">}</a>
+<a class="sourceLine" id="cb1-63" title="63"><span class="co">/* 函数的功能：显示链表中所有节点的节点号和该节点中的数据项的内容*/</span></a>
+<a class="sourceLine" id="cb1-64" title="64"><span class="dt">void</span> DisplyNode (<span class="kw">struct</span> link *head)</a>
+<a class="sourceLine" id="cb1-65" title="65">{</a>
+<a class="sourceLine" id="cb1-66" title="66">    <span class="kw">struct</span> link *p = head;</a>
+<a class="sourceLine" id="cb1-67" title="67">    <span class="dt">int</span> j = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb1-68" title="68">    <span class="cf">while</span> (p != NULL)  <span class="co">//若不是表尾，则循环打印节点的数值</span></a>
+<a class="sourceLine" id="cb1-69" title="69">    {</a>
+<a class="sourceLine" id="cb1-70" title="70">        printf(<span class="st">&quot;%5d%10d</span><span class="sc">\n</span><span class="st">&quot;</span>, j, p-&gt;data);<span class="co">//打印第j个节点数据</span></a>
+<a class="sourceLine" id="cb1-71" title="71">        p = p-&gt;next;  <span class="co">//让p指向下一个节点</span></a>
+<a class="sourceLine" id="cb1-72" title="72">        j++; </a>
+<a class="sourceLine" id="cb1-73" title="73">    }</a>
+<a class="sourceLine" id="cb1-74" title="74">}</a>
+<a class="sourceLine" id="cb1-75" title="75"><span class="co">//函数的功能：释放head所指向的链表中所有节点占用的内存</span></a>
+<a class="sourceLine" id="cb1-76" title="76"><span class="dt">void</span> DeletMemory(<span class="kw">struct</span> link *head)</a>
+<a class="sourceLine" id="cb1-77" title="77">{</a>
+<a class="sourceLine" id="cb1-78" title="78">    <span class="kw">struct</span> link *p = head, *pr = NULL;</a>
+<a class="sourceLine" id="cb1-79" title="79">    <span class="cf">while</span> (p != NULL)  <span class="co">//若不是表尾，则释放节点占用的内存</span></a>
+<a class="sourceLine" id="cb1-80" title="80">    {</a>
+<a class="sourceLine" id="cb1-81" title="81">        pr = p;        <span class="co">//在pr中保存当前节点的指针</span></a>
+<a class="sourceLine" id="cb1-82" title="82">        p = p-&gt;next;<span class="co">//让p指向下一个节点</span></a>
+<a class="sourceLine" id="cb1-83" title="83">        free(pr);    <span class="co">//释放pr指向的当前节点占用的内存</span></a>
+<a class="sourceLine" id="cb1-84" title="84">    }</a>
+<a class="sourceLine" id="cb1-85" title="85">}</a></code></pre></div>
+</body>
+</html>

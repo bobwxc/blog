@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>pacman -Syu kenel warning</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">pacman -Syu kenel warning</h1>
+<p class="date">2020-06-12 23:19:06</p>
+</header>
+<p>==&gt; WARNING: Possibly missing firmware for module: wd719x ==&gt; WARNING: Possibly missing firmware for module: aic94xx</p>
+<p>参照：https://wiki.archlinux.org/index.php/Mkinitcpio</p>
+<p>==&gt; aic94xx-firmware：适用于AIC94xx驱动程序的Adaptec SAS 44300,48300,58300定序器固 件 ==&gt; wd719x-firmware：Western Digital WD7193，WD7197和WD7296 SCSI卡的驱动程序</p>
+<p>大多数人都没有SAS / SCSI磁盘控制器，因此请忽略这些警告，不要安装这些驱动程序。 如果您不使用使用这些固件的硬件，则可以忽略此警告消息。</p>
+</body>
+</html>

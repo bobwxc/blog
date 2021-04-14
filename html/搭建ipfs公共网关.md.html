@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>搭建ipfs公共网关</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">搭建ipfs公共网关</h1>
+<p class="date">2020-05-06 18:59:03</p>
+</header>
+<p>本文基于go-ipfs写作</p>
+<hr />
+<h2 id="go-ipfs的三个端口">go-ipfs的三个端口</h2>
+<p>go-ipfs在建立node之后主要监听了三个端口 - 0.0.0.0：4001 直通外网的4001端口，用于节点连接和数据交换 - 127.0.0.1:5001 用于API和webui，内网 - 127.0.0.1:8080 本地网关</p>
+<h2 id="原理">原理</h2>
+<p>需要让8080端口的网关直接监听外部 <code>ipfs coonfig edit</code> 其中gateway 修改成</p>
+<pre><code>0.0.0.0:8080</code></pre>
+<p>这样就可以直接监听外部的请求了 事实上成为了一个公共网关</p>
+<h2 id="问题">问题</h2>
+<p>这样之后，当访问ipfs的网站时，根目录指向似乎会错误，不是文件夹而是0.0.0.0:8080/ 会造成网站本地资源无法读取</p>
+</body>
+</html>

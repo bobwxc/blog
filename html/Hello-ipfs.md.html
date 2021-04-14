@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Hello-ipfs</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Hello-ipfs</h1>
+<p class="date">2020-05-06 20:08</p>
+</header>
+<h1 id="安装go-ipfs">安装go-ipfs</h1>
+<h2 id="下载">下载</h2>
+<p>去 <a href="https://github.com/ipfs/go-ipfs/releases" class="uri">https://github.com/ipfs/go-ipfs/releases</a> 下载最新版本的go-ipfs</p>
+<blockquote>
+<p>也可以使用desktop-ipfs，不过内核还是go-ipfs且更新比较慢 如果曾经安装过，还需要fs-repo-migrations <a href="https://github.com/ipfs/fs-repo-migrations/releases" class="uri">https://github.com/ipfs/fs-repo-migrations/releases</a> 转移数据</p>
+</blockquote>
+<h2 id="安装">安装</h2>
+<p>可以直接执行<code>install.sh</code>脚本，也可以手动</p>
+<pre><code>sudo mv ./ipfs /usr/local/bin/</code></pre>
+<p>这就算安装好了</p>
+<h2 id="运行">运行</h2>
+<p>执行</p>
+<pre><code>ipfs daemon</code></pre>
+<p>出现</p>
+<pre><code>$ ipfs daemon
+Initializing daemon...
+go-ipfs version: 0.5.0
+Repo version: 9
+System version: amd64/linux
+Golang version: go1.13.10
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.1/tcp/4001
+Swarm listening on /ip4/192.168.3.11/tcp/4001
+Swarm listening on /ip6/2409:8a30:1a44:e710:bc2e:f6dc:4d9f:4/tcp/4001
+Swarm listening on /ip6/2409:8a30:1a44:e718:88f8:23f6:a4bc:b9cd/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
+Swarm listening on /p2p-circuit
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/172.17.0.1/tcp/4001
+Swarm announcing /ip4/192.168.3.11/tcp/4001
+Swarm announcing /ip6/fe80::2/tcp/4001
+Swarm announcing /ip6/fe80::2/tcp/4001
+Swarm announcing /ip6/::1/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+WebUI: http://127.0.0.1:5001/webui
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready</code></pre>
+<p>一般就可以运行了，访问 <a href="http://127.0.0.1:5001/webui" class="uri">http://127.0.0.1:5001/webui</a> 即可看见webui</p>
+<p>如果需要输入y/n来转移数据，就需要安装fs-repo-migrations了，方法同前，理论上会自动下载，但是由于ipfs.io网关被qiang了，自动下载都会失败，直接手动安装再来一次即可</p>
+<h2 id="systemd-service">systemd service</h2>
+<p><code>/usr/lib/systemd/system/ipfs.service</code></p>
+<pre class="systemd"><code>[Unit]
+Description=IPFS daemon
+After=network.target
+
+[Service]
+User=who
+Group=who
+ExecStart=/usr/local/bin/ipfs daemon 
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multiuser.target
+</code></pre>
+<hr />
+<p>use ipfs and ipns to publish a dir</p>
+<pre><code>pfs add -r filername
+ipfs name publish hash</code></pre>
+<p>then use address:http://gateway/ipns/hash to access</p>
+</body>
+</html>

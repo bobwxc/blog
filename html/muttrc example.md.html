@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>muttrc example</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">muttrc example</h1>
+<p class="date">2021-02-05 12:42:34</p>
+</header>
+<pre class="shell"><code>set editor      = &quot;vim&quot;
+set my_name     = &quot;xxxx&quot;
+
+set folder      = imaps://imap.xxxxxxx/
+set imap_user   = xxxxxx
+set imap_pass   = &quot;xxxxxxxxxxxxx&quot;
+set imap_check_subscribed
+set imap_keepalive=200
+
+set spoolfile   = +INBOX
+mailboxes       = +INBOX
+
+set from        = xxxx@xxxxxxx
+set use_from    = yes
+set realname    = &quot;xxxxxxx&quot;
+set smtp_url    = smtps://xxxxxxxxx@smtp.xxxxxx/
+set smtp_pass   = &quot;xxxxxxxxx&quot;
+set smtp_authenticators = &quot;login&quot;
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set record      = &quot;+Sent%20Items&quot;
+set send_charset= &quot;UTF-8&quot;
+
+set trash       = +Trash
+set sidebar_visible = yes
+set sidebar_width = 19
+set sort        = reverse-threads
+
+set signature   = &quot;./signature_cn&quot;
+
+# vi style keymap
+# ================
+bind pager j next-line
+bind pager &lt;Down&gt; next-line
+bind pager k previous-line
+bind pager &lt;Up&gt; previous-line
+bind pager &lt;Left&gt; previous-entry
+bind pager &lt;Right&gt; next-entry
+bind attach,index,pager \CD next-page
+bind attach,index,pager \CU previous-page
+bind pager g top
+bind pager G bottom
+bind attach,index g first-entry
+bind attach,index G last-entry
+bind index &lt;F1&gt; imap-fetch-mail
+bind index R group-reply</code></pre>
+</body>
+</html>

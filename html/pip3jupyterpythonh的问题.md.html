@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>安装jupyter “python.h”的问题</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">安装jupyter “python.h”的问题</h1>
+</header>
+<h1 id="pip3安装jupyter-python.h的问题">pip3安装jupyter “python.h”的问题</h1>
+<p>使用pip3 安装 jupyter notebook</p>
+<p>有时候会缺少pyzmq，没有libzmq</p>
+<p>进行build的时候提示</p>
+<pre><code>buildutils/initlibzmq.cpp:10:20: fatal error: Python.h: No such file or directory
+  \#include &quot;Python.h&quot;
+             ^
+  compilation terminated.编译器（gcc）无法找到python.h头文件。</code></pre>
+<p>解决办法：</p>
+<p><code>sudo apt-get install python3-dev</code></p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hexo博客添加RSS订阅功能</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">hexo博客添加RSS订阅功能</h1>
+<p class="date">2020-05-29 13:52:37</p>
+</header>
+<p>在hexojs用户下的仓库中发现两个RSS功能的npm包</p>
+<pre><code>    hexo-migrator-rss
+    hexo-generator-feed</code></pre>
+<p>不过第一个包是从 RSS 迁移所有文章到source/_posts文件夹中的,第二个才是生成RSS文件的包.</p>
+<hr />
+<p>下面就介绍一下<strong>hexo-generator-feed</strong>的使用，首选先安装这个包: <a href="https://github.com/hexojs/hexo-generator-feed" class="uri">https://github.com/hexojs/hexo-generator-feed</a></p>
+<pre><code>npm install hexo-generator-feed</code></pre>
+<p>然后在在_config.yml文件中配置该插件</p>
+<pre><code>feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+    hub:
+    content:
+    content_limit:
+    content_limit_delim: &#39; &#39;</code></pre>
+<p>参数的含义：</p>
+<p>type: RSS的类型(atom/rss2) path: 文件路径,默认是atom.xml/rss2.xml limit: 展示文章的数量,使用0或则false代表展示全部 hub: content: 在RSS文件中是否包含内容 ,有3个值 true/false默认不填为false content_limit: 指定内容的长度作为摘要,仅仅在上面content设置为false和没有自定义的描述出现 content_limit_delim: 上面截取描述的分隔符,截取内容是以指定的这个分隔符作为截取结束的标志.在达到规定的内容长度之前最后出现的这个分隔符之前的内容,，防止从中间截断.</p>
+</body>
+</html>

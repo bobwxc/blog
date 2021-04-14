@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>用 curl 命令通过 smtp 协议发送邮件</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">用 curl 命令通过 smtp 协议发送邮件</h1>
+<p class="date">2021-02-05 12:51:41</p>
+</header>
+<blockquote>
+<p>from https://www.nixops.me/articles/curl-smtp-send-mail.html</p>
+</blockquote>
+<p>2020-08-18</p>
+<p>为啥我要用 curl 来发邮件呢？主要是服务器不是邮件服务器，也没有装 sendmail、postfix 这类邮件服务，有时写一些脚本会用邮件提醒，这时候用 curl 就非常方便了。</p>
+<p>要说 Linux 下有什么神级的命令，curl 一定是其中之一。curl 几乎支持你能想到的所有 web 相关的协议，来看看 <a href="https://curl.haxx.se/">curl 官网</a>支持的协议:</p>
+<blockquote>
+<p>Supports… DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, Telnet and TFTP. curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, HTTP/2, HTTP/3, cookies, user+password authentication (Basic, Plain, Digest, CRAM-MD5, NTLM, Negotiate and Kerberos), file transfer resume, proxy tunneling and more.</p>
+</blockquote>
+<p>支持邮件相关的协议：IMAP、IMAPS、POP3、POP3S、SMTP、SMTPS，所以用 curl 来发送邮件是可以的，先看一下 help 有哪些邮件相关的的参数:</p>
+<pre><code>curl --help
+--ssl           Try SSL/TLS (FTP, IMAP, POP3, SMTP)
+--ssl-reqd      Require SSL/TLS (FTP, IMAP, POP3, SMTP)
+--mail-from FROM  Mail from this address
+--mail-rcpt TO  Mail to this receiver(s)
+--mail-auth AUTH  Originator address of the original email</code></pre>
+<p>官网给了一个例子：</p>
+<pre><code>curl smtp://mail.example.com --mail-from myself@example.com --mail-rcpt
+receiver@example.com --upload-file email.txt</code></pre>
+<p>根据 RFC 5322 规范，发送邮件需要指定发件人、收件人、主题和内容等信息，官网的例子将这些信息写到 email.txt, 用 –upload-file 参数（实际上是 PUT 请求）发送，email.txt 内容：</p>
+<pre><code>From: John Smith &lt;john@example.com&gt;
+To: Joe Smith &lt;smith@example.com&gt;
+Subject: an example.com example email
+Date: Mon, 7 Nov 2016 08:45:16
+
+Dear Joe,
+Welcome to this example email. What a lovely day.</code></pre>
+<p>curl 也支持 smtps, 使用 smtps 调用 gmail 的例子：</p>
+<pre><code>curl --ssl-reqd \
+--url &#39;smtps://smtp.gmail.com:465&#39; \
+--user &#39;username@gmail.com:password&#39; \
+--mail-from &#39;username@gmail.com&#39; \
+--mail-rcpt &#39;will@nixops.me&#39; \
+--upload-file mail.txt</code></pre>
+<p>这种方法基本满足需要，但是需要新建一个 mail.txt, 在脚本中调用最好一行命令能实现，不额外新建文件。这时使用输入重定向，下面以 outlook 邮箱为例：</p>
+<pre><code>curl --ssl-reqd   --url &#39;smtp://smtp.office365.com:587&#39;   --user &#39;sender@nixops.me:password&#39;   --mail-from &#39;sender@nixops.me&#39;   --mail-rcpt &#39;will@nixops.me&#39;   -T  &lt;(echo -e &#39;From: sender@nixops.me\nTo: will@nixops.me\nSubject:  备份成功\n\n nixops.me已全部备份完成，请检查&#39;);</code></pre>
+<p>-T 和 –upload-file 是一样的。通过这种方法，就可以一条命令实现通过 smtp 发送邮件。</p>
+<p>这种方法也有缺点：</p>
+<ol type="1">
+<li>邮箱密码写在脚本里，不够安全</li>
+<li>outlook 和 gmail 邮箱，需要指定 app 专用密码，或者启用低安全性应用访问权限</li>
+<li>smtps 需 curl 编译时有 ssl，版本不能太低，如果不是古董系统，我相信你不会遇到问题</li>
+</ol>
+<p>顺便说一下 pop3 收邮件：</p>
+<pre><code>curl --ssl-reqd   --url &#39;pop3://outlook.office365.com&#39;   --user &#39;sender@nixops.me:password&#39;</code></pre>
+<p>执行后会返回邮件编号和大小，继续请求指定编号就可以了，如下载第一个，在 –url 中指定编号：</p>
+<pre><code>curl --ssl-reqd   --url &#39;pop3://outlook.office365.com/1&#39;   --user &#39;sender@nixops.me:password&#39;</code></pre>
+<p>有问题可以用 - vvvv 看一下 curl 的调用过程排查，IMAP 协议使用也类似，但要复杂一些，就不说了</p>
+<p>参考文章： https://ec.haxx.se/usingcurl/usingcurl-smtp</p>
+</body>
+</html>

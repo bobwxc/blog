@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ssh连接时长修改</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><code>vim /etc/ssh/sshd_config</code></p>
+<p>ClientAliveInterval 表示间隔多多少秒，客户端必须操作一次</p>
+<p>ClientAliveCountMax 表示客户端在多少次中没有响应，关闭连接</p>
+<p>以下表示三十分钟的连接时长</p>
+<pre><code>ClientAliveInterval 60   # 60秒内操作一次
+ClientAliveCountMax 30   # 30次没有操作就断开连接</code></pre>
+</body>
+</html>

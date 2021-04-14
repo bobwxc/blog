@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Update DNS Records | namesilo</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<blockquote>
+<p><a href="https://www.namesilo.com/api-reference#dns" class="uri">https://www.namesilo.com/api-reference#dns</a></p>
+</blockquote>
+<h2 id="request-formatting">Request Formatting</h2>
+<p>All requests made to the API should use the following standard format:</p>
+<pre><code>https://www.namesilo.com/api/OPERATION?version=VERSION&amp;type=TYPE&amp;key=YOURAPIKEY</code></pre>
+<h3 id="more-information-on-each-part-of-the-standard-request-is-as-follows">More information on each part of the standard request is as follows:</h3>
+<p><strong>https</strong>: All requests to the API must utilize https. <strong>OPERATION</strong>: To be replaced by the name of the specific operation you would like to execute. <strong>VERSION</strong>: To be replaced by the API version you would like to use. The current version is “1”. <strong>TYPE</strong>: To be replaced by the format you would like to receive returned. The only current option is “xml”. <strong>YOURAPIKEY</strong>: To be replaced by your unique API key. Visit the API Manager page within your account for details.</p>
+<!--more-->
+<hr />
+<p>List Current DNS Records View all of the current DNS records associated with the domain. You will need the “record_id” value to perform the dnsUpdateRecord and dnsDeleteRecord functions below.</p>
+<p>Sample Request</p>
+<pre><code>https://www.namesilo.com/api/dnsListRecords?version=1&amp;type=xml&amp;key=12345&amp;domain=namesilo.com</code></pre>
+<p>Request Parameters domain: The domain being requested Response</p>
+<pre><code>&lt;namesilo&gt;
+    &lt;request&gt;
+        &lt;operation&gt;dnsListRecords&lt;/operation&gt;
+        &lt;ip&gt;55.555.55.55&lt;/ip&gt;
+    &lt;/request&gt;
+    &lt;reply&gt;
+        &lt;code&gt;300&lt;/code&gt;
+        &lt;detail&gt;success&lt;/detail&gt;
+        &lt;resource_record&gt;
+            &lt;record_id&gt;1a2b3c4d5e6f&lt;/record_id&gt;
+            &lt;type&gt;A&lt;/type&gt;
+            &lt;host&gt;test.namesilo.com&lt;/host&gt;
+            &lt;value&gt;55.555.55.55&lt;/value&gt;
+            &lt;ttl&gt;7207&lt;/ttl&gt;
+            &lt;distance&gt;0&lt;/distance&gt;
+        &lt;/resource_record&gt;
+        &lt;resource_record&gt;
+            &lt;record_id&gt;5Brg5hw25jr&lt;/record_id&gt;
+            &lt;type&gt;CNAME&lt;/type&gt;
+            &lt;host&gt;dev.namesilo.com&lt;/host&gt;
+            &lt;value&gt;testing.namesilo.com&lt;/value&gt;
+            &lt;ttl&gt;7207&lt;/ttl&gt;
+            &lt;distance&gt;0&lt;/distance&gt;
+        &lt;/resource_record&gt;
+        &lt;resource_record&gt;
+            &lt;record_id&gt;fH35aH4hsv&lt;/record_id&gt;
+            &lt;type&gt;MX&lt;/type&gt;
+            &lt;host&gt;namesilo.com&lt;/host&gt;
+            &lt;value&gt;mail.namesilo.com&lt;/value&gt;
+            &lt;ttl&gt;7207&lt;/ttl&gt;
+            &lt;distance&gt;10&lt;/distance&gt;
+        &lt;/resource_record&gt;
+        &lt;resource_record&gt;
+            &lt;record_id&gt;Ldfd26Sfbh&lt;/record_id&gt;
+            &lt;type&gt;MX&lt;/type&gt;
+            &lt;host&gt;namesilo.com&lt;/host&gt;
+            &lt;value&gt;mail2.namesilo.com&lt;/value&gt;
+            &lt;ttl&gt;7207&lt;/ttl&gt;
+            &lt;distance&gt;20&lt;/distance&gt;
+        &lt;/resource_record&gt;
+    &lt;/reply&gt;
+&lt;/namesilo&gt;</code></pre>
+<p>Operation-Specific Responses type: Possible values are “A”, “AAAA”, “CNAME”, “MX” and “TXT”</p>
+<hr />
+<p>Add DNS Records Adds a new DNS resource record to the selected domain.</p>
+<p>Sample Request</p>
+<pre><code>https://www.namesilo.com/api/dnsAddRecord?version=1&amp;type=xml&amp;key=12345&amp;domain=namesilo.com&amp;rrtype=A&amp;rrhost=test&amp;rrvalue=55.55.55.55&amp;rrttl=7207</code></pre>
+<p>Request Parameters domain: The domain being updated rrtype: The type of resources record to add. Possible values are “A”, “AAAA”, “CNAME”, “MX” and “TXT” rrhost: The hostname for the new record (there is no need to include the “.DOMAIN”) rrvalue: The value for the resource record A - The IPV4 Address AAAA - The IPV6 Address CNAME - The Target Hostname MX - The Target Hostname TXT - The Text rrdistance: Only used for MX (default is 10 if not provided) rrttl: The TTL for the new record (default is 7207 if not provided) Response</p>
+<pre><code>&lt;namesilo&gt;
+    &lt;request&gt;
+        &lt;operation&gt;dnsAddRecord&lt;/operation&gt;
+        &lt;ip&gt;55.555.55.55&lt;/ip&gt;
+    &lt;/request&gt;
+    &lt;reply&gt;
+        &lt;code&gt;300&lt;/code&gt;
+        &lt;detail&gt;success&lt;/detail&gt;
+        &lt;record_id&gt;1a2b3c4d5e&lt;/record_id&gt;
+    &lt;/reply&gt;
+&lt;/namesilo&gt;   </code></pre>
+<p>Operation-Specific Responses record_id: The unique ID of the resource record that was created. This value is necessary to perform the dnsUpdateRecord and dnsDeleteRecord functions below.</p>
+<hr />
+<p>Delete DNS Records Delete an existing DNS resource record.</p>
+<p>Sample Request</p>
+<pre><code>https://www.namesilo.com/api/dnsDeleteRecord?version=1&amp;type=xml&amp;key=12345&amp;domain=namesilo.com&amp;rrid=1a2b3</code></pre>
+<p>Request Parameters domain: The domain associated with the DNS resource record to delete rrid: The unique ID of the resource record. You can get this value using dnsListRecords. Response</p>
+<pre><code>&lt;namesilo&gt;
+    &lt;request&gt;
+        &lt;operation&gt;dnsDeleteRecord&lt;/operation&gt;
+        &lt;ip&gt;55.555.55.55&lt;/ip&gt;
+    &lt;/request&gt;
+    &lt;reply&gt;
+        &lt;code&gt;300&lt;/code&gt;
+        &lt;detail&gt;success&lt;/detail&gt;
+    &lt;/reply&gt;
+&lt;/namesilo&gt;</code></pre>
+<p>** If you delete any resource records associated with sub-domain forwarding then the forwarding will be automatically removed and no longer work.</p>
+<hr />
+<h1 id="update-an-existing-dns-resource-record.">Update an existing DNS resource record.</h1>
+<h2 id="sample-request">Sample Request</h2>
+<pre><code>https://www.namesilo.com/api/dnsUpdateRecord?version=1&amp;type=xml&amp;key=12345&amp;domain=namesilo.com&amp;rrid=1a2b3&amp;rrhost=test&amp;rrvalue=55.55.55.55&amp;rrttl=7207</code></pre>
+<h3 id="request-parameters">Request Parameters</h3>
+<p><strong>domain</strong>: The domain associated with the DNS resource record to modify <strong>rrid</strong>: The unique ID of the resource record. You can get this value using dnsListRecords. <strong>rrhost</strong>: The hostname to use (there is no need to include the “.DOMAIN”) <strong>rrvalue</strong>: The value for the resource record - A - The IPV4 Address - AAAA - The IPV6 Address - CNAME - The Target Hostname - MX - The Target Hostname - TXT - The Text</p>
+<p><strong>rrdistance</strong>: Only used for MX (default is 10 if not provided) <strong>rrttl</strong>: The TTL for this record (default is 7207 if not provided)</p>
+<h2 id="response">Response</h2>
+<pre><code>&lt;namesilo&gt;
+    &lt;request&gt;
+        &lt;operation&gt;dnsUpdateRecord&lt;/operation&gt;
+        &lt;ip&gt;55.555.55.55&lt;/ip&gt;
+    &lt;/request&gt;
+    &lt;reply&gt;
+        &lt;code&gt;300&lt;/code&gt;
+        &lt;detail&gt;success&lt;/detail&gt;
+        &lt;record_id&gt;1a2b3c4d5e&lt;/record_id&gt;
+    &lt;/reply&gt;
+&lt;/namesilo&gt;</code></pre>
+<h3 id="operation-specific-responses">Operation-Specific Responses</h3>
+<p><strong>record_id</strong>: The new unique ID for the resource record that was updated. Any successful updates will result in a new record_id.</p>
+</body>
+</html>

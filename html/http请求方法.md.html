@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>http请求方法</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">http请求方法</h1>
+<p class="date">2020-05-29 14:50:49</p>
+</header>
+<h2 id="标准http协议支持六种请求方法">标准Http协议支持六种请求方法</h2>
+<p>请求方法是请求一定的Web页面的程序或用于特定的URL</p>
+<ol type="1">
+<li><p>GET：取回请求URL标志的任何信息,在浏览器的地址栏中输入网址的方式访问网页时，浏览器采用GET方法向服务器获取资源。</p></li>
+<li><p>POST：为请求报文准备数据,即要求被请求服务器接受附在请求消息后面的数据，常用于提交表单。</p></li>
+<li><p>HEAD：类GET方法，不响应页面Body部分，用于获取资源的基本信息，即检查链接的可访问性及资源是否修改。</p></li>
+<li><p>DELETE</p></li>
+<li><p>PUT</p></li>
+<li><p>OPTIONS</p></li>
+</ol>
+<blockquote>
+<p>GET： 请求指定的页面信息，并返回实体主体。</p>
+<p>HEAD： 只请求页面的首部。</p>
+<p>POST： 请求服务器接受所指定的文档作为对所标识的URI的新的从属实体。</p>
+<p>PUT： 从客户端向服务器传送的数据取代指定的文档的内容。</p>
+<p>DELETE： 请求服务器删除指定的页面。</p>
+<p>OPTIONS： 允许客户端查看服务器的性能。</p>
+<hr />
+<p>TRACE： 请求服务器在响应中的实体主体部分返回所得到的内容。</p>
+<p>PATCH： 实体中包含一个表，表中说明与该URI所表示的原内容的区别。</p>
+<p>MOVE： 请求服务器将指定的页面移至另一个网络地址。</p>
+<p>COPY： 请求服务器将指定的页面拷贝至另一个网络地址。</p>
+<p>LINK： 请求服务器建立链接关系。</p>
+<p>UNLINK： 断开链接关系。</p>
+<p>WRAPPED： 允许客户端发送经过封装的请求。</p>
+<p>Extension-mothed：在不改动协议的前提下，可增加另外的方法。</p>
+</blockquote>
+<p>## http响应状态码</p>
+<p>当服务器响应时，其状态行的信息为HTTP的版本号，状态码，及解释状态码的简单说明。现将5类状态码详细列出：</p>
+<ul>
+<li>客户方错误
+<ul>
+<li>100 继续</li>
+<li>101 交换协议</li>
+</ul></li>
+<li>成功
+<ul>
+<li>200 OK</li>
+<li>201 已创建</li>
+<li>202 接收</li>
+<li>203 非认证信息</li>
+<li>204 无内容</li>
+<li>205 重置内容</li>
+<li>206 部分内容</li>
+</ul></li>
+<li>重定向
+<ul>
+<li>300 多路选择</li>
+<li>301 永久转移</li>
+<li>302 暂时转移</li>
+<li>303 参见其它</li>
+<li>304 未修改（Not Modified）</li>
+<li>305 使用代理</li>
+</ul></li>
+<li>客户方错误
+<ul>
+<li>400 错误请求（Bad Request）</li>
+<li>401 未认证</li>
+<li>402 需要付费</li>
+<li>403 禁止（Forbidden）</li>
+<li>404 未找到（Not Found）</li>
+<li>405 方法不允许</li>
+<li>406 不接受</li>
+<li>407 需要代理认证</li>
+<li>408 请求超时</li>
+<li>409 冲突</li>
+<li>410 失败</li>
+<li>411 需要长度</li>
+<li>412 条件失败</li>
+<li>413 请求实体太大</li>
+<li>414 请求URI太长</li>
+<li>415 不支持媒体类型</li>
+</ul></li>
+<li>服务器错误
+<ul>
+<li>500 服务器内部错误</li>
+<li>501 未实现（Not Implemented）</li>
+<li>502 网关失败</li>
+<li>504 网关超时</li>
+<li>505 HTTP版本不支持</li>
+</ul></li>
+</ul>
+<hr />
+<p>0，GET：GET可以说是最常见的了，它本质就是发送一个请求来取得服务器上的某一资源。资源通过一组HTTP头和呈现数据（如HTML文本，或者图片或者视频等）返回给客户端。GET请求中，永远不会包含呈现数据。</p>
+<p>1，HEAD：HEAD和GET本质是一样的，区别在于HEAD不含有呈现数据，而仅仅是HTTP头信息。有的人可能觉得这个方法没什么用，其实不是这样的。想象一个业务情景：欲判断某个资源是否存在，我们通常使用GET，但这里用HEAD则意义更加明确。</p>
+<p>2，PUT：这个方法比较少见。HTML表单也不支持这个。本质上来讲， PUT和POST极为相似，都是向服务器发送数据，但它们之间有一个重要区别，PUT通常指定了资源的存放位置，而POST则没有，POST的数据存放位置由服务器自己决定。举个例子：如一个用于提交博文的URL，/addBlog。如果用PUT，则提交的URL会是像这样的”/addBlog/abc123”，其中abc123就是这个博文的地址。而如果用POST，则这个地址会在提交后由服务器告知客户端。目前大部分博客都是这样的。显然，PUT和POST用途是不一样的。具体用哪个还取决于当前的业务场景。</p>
+<p>3，DELETE：删除某一个资源。基本上这个也很少见，不过还是有一些地方比如amazon的S3云服务里面就用的这个方法来删除资源。</p>
+<p>4，POST：向服务器提交数据。这个方法用途广泛，几乎目前所有的提交操作都是靠这个完成。</p>
+<p>5，OPTIONS：这个方法很有趣，但极少使用。它用于获取当前URL所支持的方法。若请求成功，则它会在HTTP头中包含一个名为“Allow”的头，值是所支持的方法，如“GET, POST”。</p>
+<hr />
+<p>关于实体头部的内容还可以有：</p>
+<p>Last Modified ：请求文档的最近修改时间。</p>
+<p>Expires ：请求文档的过期时间。</p>
+<p>Connect-length：文档数据的长度。</p>
+<p>WWW-authenricate：通知客户端需要的认证信息。</p>
+<p>Connect-encoding ：说明有无使用压缩技术。</p>
+<p>Transfer-encoding ：说明采用的编码变换类型。</p>
+<blockquote>
+<p>https://www.cnblogs.com/acles/p/5300824.html</p>
+</blockquote>
+</body>
+</html>

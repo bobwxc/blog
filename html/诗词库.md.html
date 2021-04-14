@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>诗词库</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">诗词库</h1>
+<p class="date">2020-07-17 21:43:17</p>
+</header>
+<p>https://gitee.com/mirrors/chinese-poetry.git</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="im">import</span> sqlite3</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="im">import</span> json</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="im">import</span> hashlib</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">db <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;./shi.db&#39;</span>)</a>
+<a class="sourceLine" id="cb1-7" title="7">cursor <span class="op">=</span> db.cursor()</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="co">&quot;&quot;&quot; </span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="co">CREATE TABLE tangshi(</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="co">title char(30),</span></a>
+<a class="sourceLine" id="cb1-12" title="12"><span class="co">content text,</span></a>
+<a class="sourceLine" id="cb1-13" title="13"><span class="co">id char(50) primary key,</span></a>
+<a class="sourceLine" id="cb1-14" title="14"><span class="co">author char(15)</span></a>
+<a class="sourceLine" id="cb1-15" title="15"><span class="co">);</span></a>
+<a class="sourceLine" id="cb1-16" title="16"></a>
+<a class="sourceLine" id="cb1-17" title="17"><span class="co">CREATE TABLE songshi(</span></a>
+<a class="sourceLine" id="cb1-18" title="18"><span class="co">title char(30),</span></a>
+<a class="sourceLine" id="cb1-19" title="19"><span class="co">content text,</span></a>
+<a class="sourceLine" id="cb1-20" title="20"><span class="co">id char(50) primary key,</span></a>
+<a class="sourceLine" id="cb1-21" title="21"><span class="co">author char(15)</span></a>
+<a class="sourceLine" id="cb1-22" title="22"><span class="co">);</span></a>
+<a class="sourceLine" id="cb1-23" title="23"></a>
+<a class="sourceLine" id="cb1-24" title="24"><span class="co">CREATE TABLE songci</span></a>
+<a class="sourceLine" id="cb1-25" title="25"><span class="co">(</span></a>
+<a class="sourceLine" id="cb1-26" title="26"><span class="co">title char(30),</span></a>
+<a class="sourceLine" id="cb1-27" title="27"><span class="co">content text,</span></a>
+<a class="sourceLine" id="cb1-28" title="28"><span class="co">id char(50) primary key,</span></a>
+<a class="sourceLine" id="cb1-29" title="29"><span class="co">author char(15)</span></a>
+<a class="sourceLine" id="cb1-30" title="30"><span class="co">);</span></a>
+<a class="sourceLine" id="cb1-31" title="31"></a>
+<a class="sourceLine" id="cb1-32" title="32"></a>
+<a class="sourceLine" id="cb1-33" title="33"><span class="co"> &quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb1-34" title="34"></a>
+<a class="sourceLine" id="cb1-35" title="35"></a>
+<a class="sourceLine" id="cb1-36" title="36"><span class="kw">def</span> tangshi():</a>
+<a class="sourceLine" id="cb1-37" title="37">    j <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-38" title="38">    <span class="cf">while</span>(j <span class="op">&lt;=</span> <span class="dv">57000</span>):</a>
+<a class="sourceLine" id="cb1-39" title="39">        file_ <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;./json/poet.tang.&#39;</span><span class="op">+</span><span class="bu">str</span>(j)<span class="op">+</span><span class="st">&#39;.json&#39;</span>)</a>
+<a class="sourceLine" id="cb1-40" title="40">        file_content <span class="op">=</span> file_.read()</a>
+<a class="sourceLine" id="cb1-41" title="41">        file_content <span class="op">=</span> json.loads(file_content)</a>
+<a class="sourceLine" id="cb1-42" title="42">        <span class="cf">for</span> i <span class="kw">in</span> file_content:</a>
+<a class="sourceLine" id="cb1-43" title="43">            sql <span class="op">=</span> <span class="st">&quot;insert or ignore into tangshi (title,content,id,author) values(?,?,?,?)&quot;</span></a>
+<a class="sourceLine" id="cb1-44" title="44">            param <span class="op">=</span> (i[<span class="st">&#39;title&#39;</span>], <span class="bu">str</span>(i[<span class="st">&#39;paragraphs&#39;</span>]), i[<span class="st">&#39;id&#39;</span>], i[<span class="st">&#39;author&#39;</span>])</a>
+<a class="sourceLine" id="cb1-45" title="45">            cursor.execute(sql, param)</a>
+<a class="sourceLine" id="cb1-46" title="46"></a>
+<a class="sourceLine" id="cb1-47" title="47">        db.commit()  <span class="co"># 提交事务！！！</span></a>
+<a class="sourceLine" id="cb1-48" title="48">        file_.close()</a>
+<a class="sourceLine" id="cb1-49" title="49">        j <span class="op">+=</span> <span class="dv">1000</span></a>
+<a class="sourceLine" id="cb1-50" title="50"></a>
+<a class="sourceLine" id="cb1-51" title="51"></a>
+<a class="sourceLine" id="cb1-52" title="52"><span class="kw">def</span> songshi():</a>
+<a class="sourceLine" id="cb1-53" title="53">    j <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-54" title="54">    <span class="cf">while</span>(j <span class="op">&lt;=</span> <span class="dv">254000</span>):</a>
+<a class="sourceLine" id="cb1-55" title="55">        file_ <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;./json/poet.song.&#39;</span><span class="op">+</span><span class="bu">str</span>(j)<span class="op">+</span><span class="st">&#39;.json&#39;</span>)</a>
+<a class="sourceLine" id="cb1-56" title="56">        file_content <span class="op">=</span> file_.read()</a>
+<a class="sourceLine" id="cb1-57" title="57">        file_content <span class="op">=</span> json.loads(file_content)</a>
+<a class="sourceLine" id="cb1-58" title="58">        <span class="cf">for</span> i <span class="kw">in</span> file_content:</a>
+<a class="sourceLine" id="cb1-59" title="59">            sql <span class="op">=</span> <span class="st">&quot;insert or ignore into songshi (title,content,id,author) values(?,?,?,?)&quot;</span></a>
+<a class="sourceLine" id="cb1-60" title="60">            param <span class="op">=</span> (i[<span class="st">&#39;title&#39;</span>], <span class="bu">str</span>(i[<span class="st">&#39;paragraphs&#39;</span>]), i[<span class="st">&#39;id&#39;</span>], i[<span class="st">&#39;author&#39;</span>])</a>
+<a class="sourceLine" id="cb1-61" title="61">            cursor.execute(sql, param)</a>
+<a class="sourceLine" id="cb1-62" title="62"></a>
+<a class="sourceLine" id="cb1-63" title="63">        db.commit()  <span class="co"># 提交事务！！！</span></a>
+<a class="sourceLine" id="cb1-64" title="64">        file_.close()</a>
+<a class="sourceLine" id="cb1-65" title="65">        j <span class="op">+=</span> <span class="dv">1000</span></a>
+<a class="sourceLine" id="cb1-66" title="66"></a>
+<a class="sourceLine" id="cb1-67" title="67"></a>
+<a class="sourceLine" id="cb1-68" title="68"><span class="kw">def</span> songci():</a>
+<a class="sourceLine" id="cb1-69" title="69">    j <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-70" title="70">    <span class="cf">while</span>(j <span class="op">&lt;=</span> <span class="dv">21000</span>):</a>
+<a class="sourceLine" id="cb1-71" title="71">        file_ <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;./ci/ci.song.&#39;</span><span class="op">+</span><span class="bu">str</span>(j)<span class="op">+</span><span class="st">&#39;.json&#39;</span>)</a>
+<a class="sourceLine" id="cb1-72" title="72">        file_content <span class="op">=</span> file_.read()</a>
+<a class="sourceLine" id="cb1-73" title="73">        file_content <span class="op">=</span> json.loads(file_content)</a>
+<a class="sourceLine" id="cb1-74" title="74"></a>
+<a class="sourceLine" id="cb1-75" title="75">        <span class="cf">for</span> i <span class="kw">in</span> file_content:</a>
+<a class="sourceLine" id="cb1-76" title="76">            data <span class="op">=</span> i[<span class="st">&#39;rhythmic&#39;</span>]<span class="op">+</span><span class="bu">str</span>(i[<span class="st">&#39;paragraphs&#39;</span>])<span class="op">+</span>i[<span class="st">&#39;author&#39;</span>]</a>
+<a class="sourceLine" id="cb1-77" title="77">            <span class="bu">id</span> <span class="op">=</span> hashlib.md5(data.encode(encoding<span class="op">=</span><span class="st">&#39;UTF-8&#39;</span>)).hexdigest()</a>
+<a class="sourceLine" id="cb1-78" title="78">            <span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span>[<span class="dv">0</span>:<span class="dv">8</span>]<span class="op">+</span><span class="st">&#39;-&#39;</span><span class="op">+</span><span class="bu">id</span>[<span class="dv">8</span>:<span class="dv">12</span>]<span class="op">+</span><span class="st">&#39;-&#39;</span><span class="op">+</span><span class="bu">id</span>[<span class="dv">12</span>:<span class="dv">16</span>]<span class="op">+</span><span class="st">&#39;-&#39;</span><span class="op">+</span><span class="bu">id</span>[<span class="dv">16</span>:<span class="dv">20</span>]<span class="op">+</span><span class="st">&#39;-&#39;</span><span class="op">+</span><span class="bu">id</span>[<span class="dv">20</span>:]</a>
+<a class="sourceLine" id="cb1-79" title="79">    </a>
+<a class="sourceLine" id="cb1-80" title="80">            sql <span class="op">=</span> <span class="st">&quot;insert or ignore into songci (title,content,id,author) values(?,?,?,?)&quot;</span></a>
+<a class="sourceLine" id="cb1-81" title="81">            param <span class="op">=</span> (i[<span class="st">&#39;rhythmic&#39;</span>], <span class="bu">str</span>(i[<span class="st">&#39;paragraphs&#39;</span>]), <span class="bu">id</span>, i[<span class="st">&#39;author&#39;</span>])</a>
+<a class="sourceLine" id="cb1-82" title="82">            cursor.execute(sql, param)</a>
+<a class="sourceLine" id="cb1-83" title="83">    </a>
+<a class="sourceLine" id="cb1-84" title="84">        db.commit()  <span class="co"># 提交事务！！！</span></a>
+<a class="sourceLine" id="cb1-85" title="85">        file_.close()</a>
+<a class="sourceLine" id="cb1-86" title="86">        j <span class="op">+=</span> <span class="dv">1000</span></a>
+<a class="sourceLine" id="cb1-87" title="87"></a>
+<a class="sourceLine" id="cb1-88" title="88">songci()</a>
+<a class="sourceLine" id="cb1-89" title="89">cursor.close()</a>
+<a class="sourceLine" id="cb1-90" title="90">db.close()</a></code></pre></div>
+</body>
+</html>

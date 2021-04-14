@@ -8,241 +8,241 @@ welcome to my small blog!!!
 
 ## posts
 
-- [14亿人的战争：中国人用了30年望见计算力的珠峰](./posts/14亿人的战争：中国人用了30年望见计算力的珠峰.md)
+- [14亿人的战争：中国人用了30年望见计算力的珠峰](./html/14亿人的战争：中国人用了30年望见计算力的珠峰.md.html)
 
-- [51 1602脚位图](./posts/51%201602脚位图.md)
+- [51 1602脚位图](./html/51%201602脚位图.md.html)
 
-- [Apache2部署虚拟站点](./posts/Apache2部署虚拟站点.md)
+- [Apache2部署虚拟站点](./html/Apache2部署虚拟站点.md.html)
 
-- [Arch真香](./posts/Arch真香.md)
+- [Arch真香](./html/Arch真香.md.html)
 
-- [BT symbol](./posts/BT%20symbol.md)
+- [BT symbol](./html/BT%20symbol.md.html)
 
-- [Create-makedoc.yml-README.md-badge](./posts/Create-makedoc.yml-README.md-badge.md)
+- [Create-makedoc.yml-README.md-badge](./html/Create-makedoc.yml-README.md-badge.md.html)
 
-- [Debian 项目宪章（1.7版本）](./posts/Debian%20项目宪章（1.7版本）.md)
+- [Debian 项目宪章（1.7版本）](./html/Debian%20项目宪章（1.7版本）.md.html)
 
-- [GFW 技术评论](./posts/GFW%20技术评论.md)
+- [GFW 技术评论](./html/GFW%20技术评论.md.html)
 
-- [Hello-ipfs](./posts/Hello-ipfs.md)
+- [Hello-ipfs](./html/Hello-ipfs.md.html)
 
-- [Patch Workflow With Mutt - 2019](./posts/Patch%20Workflow%20With%20Mutt%20-%202019.md)
+- [Patch Workflow With Mutt - 2019](./html/Patch%20Workflow%20With%20Mutt%20-%202019.md.html)
 
-- [Perl简介](./posts/Perl简介.md)
+- [Perl简介](./html/Perl简介.md.html)
 
-- [RFC3161可信时间戳](./posts/RFC3161可信时间戳.md)
+- [RFC3161可信时间戳](./html/RFC3161可信时间戳.md.html)
 
-- [SSTV制式](./posts/SSTV制式.md)
+- [SSTV制式](./html/SSTV制式.md.html)
 
-- [Sphinx 文档系统](./posts/Sphinx%20文档系统.md)
+- [Sphinx 文档系统](./html/Sphinx%20文档系统.md.html)
 
-- [Update DNS Records | namesilo](./posts/Update%20DNS%20Records%20|%20namesilo.md)
+- [Update DNS Records | namesilo](./html/Update%20DNS%20Records%20|%20namesilo.md.html)
 
-- [bash脚本技巧_腾讯实验室](./posts/bash脚本技巧_腾讯实验室.md)
+- [bash脚本技巧_腾讯实验室](./html/bash脚本技巧_腾讯实验室.md.html)
 
-- [bin|qpsk|wav create](./posts/bin|qpsk|wav%20create.md)
+- [bin|qpsk|wav create](./html/bin|qpsk|wav%20create.md.html)
 
-- [cgit on debian](./posts/cgit%20on%20debian.md)
+- [cgit on debian](./html/cgit%20on%20debian.md.html)
 
-- [configure --prefix](./posts/configure%20--prefix.md)
+- [configure --prefix](./html/configure%20--prefix.md.html)
 
-- [deb 打包](./posts/deb%20打包.md)
+- [deb 打包](./html/deb%20打包.md.html)
 
-- [debian系邮件服务器的搭建（Postfix+Dovecot）](./posts/debian系邮件服务器的搭建（Postfix+Dovecot）.md)
+- [debian系邮件服务器的搭建（Postfix+Dovecot）](./html/debian系邮件服务器的搭建（Postfix+Dovecot）.md.html)
 
-- [docker swarm集群](./posts/docker%20swarm集群.md)
+- [docker swarm集群](./html/docker%20swarm集群.md.html)
 
-- [docker](./posts/docker.md)
+- [docker](./html/docker.md.html)
 
-- [ed25519 ssh key](./posts/ed25519%20ssh%20key.md)
+- [ed25519 ssh key](./html/ed25519%20ssh%20key.md.html)
 
-- [emoji](./posts/emoji.md)
+- [emoji](./html/emoji.md.html)
 
-- [eu数字服务新动向](./posts/eu数字服务新动向.md)
+- [eu数字服务新动向](./html/eu数字服务新动向.md.html)
 
-- [gcc优化等级](./posts/gcc优化等级.md)
+- [gcc优化等级](./html/gcc优化等级.md.html)
 
-- [gentoo安装](./posts/gentoo安装.md)
+- [gentoo安装](./html/gentoo安装.md.html)
 
-- [geo-python](./posts/geo-python.md)
+- [geo-python](./html/geo-python.md.html)
 
-- [git fixup+rebase 修改某个历史 commit ](./posts/git%20fixup+rebase%20修改某个历史%20commit%20.md)
+- [git fixup+rebase 修改某个历史 commit ](./html/git%20fixup+rebase%20修改某个历史%20commit%20.md.html)
 
-- [gitlog statistic](./posts/gitlog%20statistic.md)
+- [gitlog statistic](./html/gitlog%20statistic.md.html)
 
-- [gnupg 加解密签名](./posts/gnupg%20加解密签名.md)
+- [gnupg 加解密签名](./html/gnupg%20加解密签名.md.html)
 
-- [grub2各种手动命令引导](./posts/grub2各种手动命令引导.md)
+- [grub2各种手动命令引导](./html/grub2各种手动命令引导.md.html)
 
-- [hello-world](./posts/hello-world.md)
+- [hello-world](./html/hello-world.md.html)
 
-- [hexo博客添加RSS订阅功能](./posts/hexo博客添加RSS订阅功能.md)
+- [hexo博客添加RSS订阅功能](./html/hexo博客添加RSS订阅功能.md.html)
 
-- [html5语义化标签](./posts/html5语义化标签.md)
+- [html5语义化标签](./html/html5语义化标签.md.html)
 
-- [http请求方法](./posts/http请求方法.md)
+- [http请求方法](./html/http请求方法.md.html)
 
-- [imap](./posts/imap.md)
+- [imap](./html/imap.md.html)
 
-- [js异步回调地狱](./posts/js异步回调地狱.md)
+- [js异步回调地狱](./html/js异步回调地狱.md.html)
 
-- [kail u盘安装](./posts/kail%20u盘安装.md)
+- [kail u盘安装](./html/kail%20u盘安装.md.html)
 
-- [linux-git-repo](./posts/linux-git-repo.md)
+- [linux-git-repo](./html/linux-git-repo.md.html)
 
-- [linux目录结构](./posts/linux目录结构.md)
+- [linux目录结构](./html/linux目录结构.md.html)
 
-- [mail to blog](./posts/mail%20to%20blog.md)
+- [mail to blog](./html/mail%20to%20blog.md.html)
 
-- [mdshow渲染md文件](./posts/mdshow渲染md文件.md)
+- [mdshow渲染md文件](./html/mdshow渲染md文件.md.html)
 
-- [mulanpslv2](./posts/mulanpslv2.md)
+- [mulanpslv2](./html/mulanpslv2.md.html)
 
-- [muttrc example](./posts/muttrc%20example.md)
+- [muttrc example](./html/muttrc%20example.md.html)
 
-- [mysql 8 用户权限管理](./posts/mysql%208%20用户权限管理.md)
+- [mysql 8 用户权限管理](./html/mysql%208%20用户权限管理.md.html)
 
-- [mysql导出csv](./posts/mysql导出csv.md)
+- [mysql导出csv](./html/mysql导出csv.md.html)
 
-- [nodejs child_process](./posts/nodejs%20child_process.md)
+- [nodejs child_process](./html/nodejs%20child_process.md.html)
 
-- [openssl 生成ssl证书详解](./posts/openssl%20生成ssl证书详解.md)
+- [openssl 生成ssl证书详解](./html/openssl%20生成ssl证书详解.md.html)
 
-- [pacman -Syu kenel warning](./posts/pacman%20-Syu%20kenel%20warning.md)
+- [pacman -Syu kenel warning](./html/pacman%20-Syu%20kenel%20warning.md.html)
 
-- [pandownload作者被捕](./posts/pandownload作者被捕.md)
+- [pandownload作者被捕](./html/pandownload作者被捕.md.html)
 
-- [perl-poem](./posts/perl-poem.md)
+- [perl-poem](./html/perl-poem.md.html)
 
-- [pip3jupyterpythonh的问题](./posts/pip3jupyterpythonh的问题.md)
+- [pip3jupyterpythonh的问题](./html/pip3jupyterpythonh的问题.md.html)
 
-- [pop3](./posts/pop3.md)
+- [pop3](./html/pop3.md.html)
 
-- [python class](./posts/python%20class.md)
+- [python class](./html/python%20class.md.html)
 
-- [python_GUI_tkinter](./posts/python_GUI_tkinter.md)
+- [python_GUI_tkinter](./html/python_GUI_tkinter.md.html)
 
-- [sks-gpg安全性](./posts/sks-gpg安全性.md)
+- [sks-gpg安全性](./html/sks-gpg安全性.md.html)
 
-- [snapper快照管理工具](./posts/snapper快照管理工具.md)
+- [snapper快照管理工具](./html/snapper快照管理工具.md.html)
 
-- [ssh连接时长修改](./posts/ssh连接时长修改.md)
+- [ssh连接时长修改](./html/ssh连接时长修改.md.html)
 
-- [typecho php自动切换夜间模式](./posts/typecho%20php自动切换夜间模式.md)
+- [typecho php自动切换夜间模式](./html/typecho%20php自动切换夜间模式.md.html)
 
-- [typecho用户权限](./posts/typecho用户权限.md)
+- [typecho用户权限](./html/typecho用户权限.md.html)
 
-- [ubuntu内核编译安装](./posts/ubuntu内核编译安装.md)
+- [ubuntu内核编译安装](./html/ubuntu内核编译安装.md.html)
 
-- [vim替换](./posts/vim替换.md)
+- [vim替换](./html/vim替换.md.html)
 
-- [wordlist](./posts/wordlist.md)
+- [wordlist](./html/wordlist.md.html)
 
-- [yeah](./posts/yeah.md)
+- [yeah](./html/yeah.md.html)
 
-- [三坑圈的两件事](./posts/三坑圈的两件事.md)
+- [三坑圈的两件事](./html/三坑圈的两件事.md.html)
 
-- [中华人民共和国国民经济和社会发展 第十四个五年规划和2035年远景目标纲要](./posts/中华人民共和国国民经济和社会发展%20第十四个五年规划和2035年远景目标纲要.md)
+- [中华人民共和国国民经济和社会发展 第十四个五年规划和2035年远景目标纲要](./html/中华人民共和国国民经济和社会发展%20第十四个五年规划和2035年远景目标纲要.md.html)
 
-- [中华人民共和国民法典2020](./posts/中华人民共和国民法典2020.md)
+- [中华人民共和国民法典2020](./html/中华人民共和国民法典2020.md.html)
 
-- [中国中波广播电台频率表2020](./posts/中国中波广播电台频率表2020.md)
+- [中国中波广播电台频率表2020](./html/中国中波广播电台频率表2020.md.html)
 
-- [书房](./posts/书房.md)
+- [书房](./html/书房.md.html)
 
-- [使用JavaScript解析URL的方法示例](./posts/使用JavaScript解析URL的方法示例.md)
+- [使用JavaScript解析URL的方法示例](./html/使用JavaScript解析URL的方法示例.md.html)
 
-- [使用typecho创建blog](./posts/使用typecho创建blog.md)
+- [使用typecho创建blog](./html/使用typecho创建blog.md.html)
 
-- [修改deepin默认程序](./posts/修改deepin默认程序.md)
+- [修改deepin默认程序](./html/修改deepin默认程序.md.html)
 
-- [全球疫情之下回国的人们](./posts/全球疫情之下回国的人们.md)
+- [全球疫情之下回国的人们](./html/全球疫情之下回国的人们.md.html)
 
-- [公共dns](./posts/公共dns.md)
+- [公共dns](./html/公共dns.md.html)
 
-- [关不上的门](./posts/关不上的门.md)
+- [关不上的门](./html/关不上的门.md.html)
 
-- [关于外国人永居条例（征求意见稿）的一点看法](./posts/关于外国人永居条例（征求意见稿）的一点看法.md)
+- [关于外国人永居条例（征求意见稿）的一点看法](./html/关于外国人永居条例（征求意见稿）的一点看法.md.html)
 
-- [关于最近肖战部分粉丝行为的看法](./posts/关于最近肖战部分粉丝行为的看法.md)
+- [关于最近肖战部分粉丝行为的看法](./html/关于最近肖战部分粉丝行为的看法.md.html)
 
-- [关于深圳立法禁食猫狗](./posts/关于深圳立法禁食猫狗.md)
+- [关于深圳立法禁食猫狗](./html/关于深圳立法禁食猫狗.md.html)
 
-- [几个可以复用的js html函数](./posts/几个可以复用的js%20html函数.md)
+- [几个可以复用的js html函数](./html/几个可以复用的js%20html函数.md.html)
 
-- [利用API进行ipv6动态解析](./posts/利用API进行ipv6动态解析.md)
+- [利用API进行ipv6动态解析](./html/利用API进行ipv6动态解析.md.html)
 
-- [前端编译原理](./posts/前端编译原理.md)
+- [前端编译原理](./html/前端编译原理.md.html)
 
-- [勒索病毒漏洞补丁及时打](./posts/勒索病毒漏洞补丁及时打.md)
+- [勒索病毒漏洞补丁及时打](./html/勒索病毒漏洞补丁及时打.md.html)
 
-- [原味鸡配方](./posts/原味鸡配方.md)
+- [原味鸡配方](./html/原味鸡配方.md.html)
 
-- [古诗十九首](./posts/古诗十九首.md)
+- [古诗十九首](./html/古诗十九首.md.html)
 
-- [后浪简评 🌊](./posts/后浪简评%20🌊.md)
+- [后浪简评 🌊](./html/后浪简评%20🌊.md.html)
 
-- [在延安文艺座谈会上的讲话](./posts/在延安文艺座谈会上的讲话.txt)
+- [在延安文艺座谈会上的讲话](./html/在延安文艺座谈会上的讲话.txt.html)
 
-- [城市](./posts/城市.md)
+- [城市](./html/城市.md.html)
 
-- [希腊字母表 latex参考](./posts/希腊字母表%20latex参考.md)
+- [希腊字母表 latex参考](./html/希腊字母表%20latex参考.md.html)
 
-- [彻 底 变 质](./posts/彻%20底%20变%20质.md)
+- [彻 底 变 质](./html/彻%20底%20变%20质.md.html)
 
-- [总有一种力量它让我们泪流满面《南方周末》1999年新年致辞](./posts/总有一种力量它让我们泪流满面《南方周末》1999年新年致辞.md)
+- [总有一种力量它让我们泪流满面《南方周末》1999年新年致辞](./html/总有一种力量它让我们泪流满面《南方周末》1999年新年致辞.md.html)
 
-- [我单推了，我是DD](./posts/我单推了，我是DD.md)
+- [我单推了，我是DD](./html/我单推了，我是DD.md.html)
 
-- [搭建ipfs公共网关](./posts/搭建ipfs公共网关.md)
+- [搭建ipfs公共网关](./html/搭建ipfs公共网关.md.html)
 
-- [搭建家庭服务器](./posts/搭建家庭服务器.md)
+- [搭建家庭服务器](./html/搭建家庭服务器.md.html)
 
-- [海尔员工徒手爬楼救人](./posts/海尔员工徒手爬楼救人.md)
+- [海尔员工徒手爬楼救人](./html/海尔员工徒手爬楼救人.md.html)
 
-- [满屏雪花点](./posts/满屏雪花点.md)
+- [满屏雪花点](./html/满屏雪花点.md.html)
 
-- [献给你的进行曲](./posts/献给你的进行曲.md)
+- [献给你的进行曲](./html/献给你的进行曲.md.html)
 
-- [用 curl 命令通过 smtp 协议发送邮件](./posts/用%20curl%20命令通过%20smtp%20协议发送邮件.md)
+- [用 curl 命令通过 smtp 协议发送邮件](./html/用%20curl%20命令通过%20smtp%20协议发送邮件.md.html)
 
-- [疫情之下全球形势资料收集](./posts/疫情之下全球形势资料收集.md)
+- [疫情之下全球形势资料收集](./html/疫情之下全球形势资料收集.md.html)
 
-- [移动boot分区和改变根分区大小](./posts/移动boot分区和改变根分区大小.md)
+- [移动boot分区和改变根分区大小](./html/移动boot分区和改变根分区大小.md.html)
 
-- [终端ANSI控制码](./posts/终端ANSI控制码.md)
+- [终端ANSI控制码](./html/终端ANSI控制码.md.html)
 
-- [网页夜间模式切换](./posts/网页夜间模式切换.md)
+- [网页夜间模式切换](./html/网页夜间模式切换.md.html)
 
-- [署名-非商业性使用-相同方式共享 3.0中国大陆](./posts/署名-非商业性使用-相同方式共享%203.0中国大陆.md)
+- [署名-非商业性使用-相同方式共享 3.0中国大陆](./html/署名-非商业性使用-相同方式共享%203.0中国大陆.md.html)
 
-- [署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)概要](./posts/署名-非商业性使用-相同方式共享%204.0%20国际%20(CC%20BY-NC-SA%204.0)概要.md)
+- [署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)概要](./html/署名-非商业性使用-相同方式共享%204.0%20国际%20(CC%20BY-NC-SA%204.0)概要.md.html)
 
-- [讲不听，听不改，还反咬一口](./posts/讲不听，听不改，还反咬一口.md)
+- [讲不听，听不改，还反咬一口](./html/讲不听，听不改，还反咬一口.md.html)
 
-- [诗词库](./posts/诗词库.md)
+- [诗词库](./html/诗词库.md.html)
 
-- [转manjaro](./posts/转manjaro.md)
+- [转manjaro](./html/转manjaro.md.html)
 
-- [转换md中的文件为html_base64](./posts/转换md中的文件为html_base64.md)
+- [转换md中的文件为html_base64](./html/转换md中的文件为html_base64.md.html)
 
-- [远程提交博客](./posts/远程提交博客.md)
+- [远程提交博客](./html/远程提交博客.md.html)
 
-- [配置ssl证书](./posts/配置ssl证书.md)
+- [配置ssl证书](./html/配置ssl证书.md.html)
 
-- [链表示例](./posts/链表示例.md)
+- [链表示例](./html/链表示例.md.html)
 
-- [陆军的运作模式](./posts/陆军的运作模式.md)
+- [陆军的运作模式](./html/陆军的运作模式.md.html)
 
-- [陪床小记](./posts/陪床小记.md)
+- [陪床小记](./html/陪床小记.md.html)
 
-- [面向对象与面向过程](./posts/面向对象与面向过程.md)
+- [面向对象与面向过程](./html/面向对象与面向过程.md.html)
 
 
 
 ## about
 
-- [index](./about/index.md)
+- [index](./html/index.md.html)
 
 
 
@@ -251,4 +251,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Docify](https://docsify.js.org/#/).
 
-Generate Time: `2021-04-13T08:01:17+00:00`
+Generate Time: `2021-04-14T06:05:46+00:00`

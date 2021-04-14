@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>配置ssl证书</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<p><a href="https://letsencrypt.org/zh-cn/"><img src="https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg" /></a></p>
+<p>Let’s encrypt现在真的是很方便了 以前想配置https搞了半天还没签出来，dns太慢了 令人头秃</p>
+<p>现在用certbot直接自动搞定了 配置好/etc/apache2/site-enable/下的网站域名就可以全自动申请了</p>
+<pre class="shell"><code>#申请
+sudo certbot --apache
+
+#续签
+sudo certbot renew</code></pre>
+<p><a href="https://certbot.eff.org/"><img src="https://certbot.eff.org/images/certbot-logo-1A.svg" /></a></p>
+<blockquote>
+<p>freessl的也不难了好像，AsiaTrust的证书可以一年</p>
+</blockquote>
+</body>
+</html>
