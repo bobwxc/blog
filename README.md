@@ -1,8 +1,12 @@
+---
+title: bobwxc BLOG
+---
+
 # bobwxc BLOG
 
-welcome to my small blog!!!
+Welcome to my small blog!!!
 
-[![autobuild-blog](https://github.com/bobwxc/blog/actions/workflows/build.yml/badge.svg)](https://github.com/bobwxc/blog/actions/workflows/build.yml)
+[![blogbuild](https://github.com/bobwxc/blog/actions/workflows/build.yml/badge.svg)](https://github.com/bobwxc/blog/actions/workflows/build.yml)
 
 ---
 
@@ -74,7 +78,7 @@ welcome to my small blog!!!
 
 - [grub2各种手动命令引导](./html/grub2各种手动命令引导.md.html)
 
-- [hello-world](./html/hello-world.md.html)
+- [hexo-hello-world](./html/hexo-hello-world.md.html)
 
 - [hexo博客添加RSS订阅功能](./html/hexo博客添加RSS订阅功能.md.html)
 
@@ -251,4 +255,4 @@ welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-04-14T07:22:07+00:00`
+Generate Time: `2021-04-14T11:42:00+00:00`
