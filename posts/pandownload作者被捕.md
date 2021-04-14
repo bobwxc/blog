@@ -18,4 +18,4 @@ date: 2020-04-16 20:18:00
 ![请输入图片描述][1]
 
 
-  [1]: http://blog.wxcserver.top/usr/uploads/2020/04/1410525740.svg
+  [1]: http://blog.bobwxc.top/usr/uploads/2020/04/1410525740.svg
