@@ -24,6 +24,8 @@ Welcome to my small blog!!!
 
 - [Create-makedoc.yml-README.md-badge](./html/Create-makedoc.yml-README.md-badge.md.html)
 
+- [DJS-130-bootloader](./html/DJS-130-bootloader.org.html)
+
 - [Debian 项目宪章（1.7版本）](./html/Debian%20项目宪章（1.7版本）.md.html)
 
 - [GFW 技术评论](./html/GFW%20技术评论.md.html)
@@ -255,4 +257,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-04-14T11:42:00+00:00`
+Generate Time: `2021-04-18T05:28:40+00:00`
