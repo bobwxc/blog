@@ -1,0 +1,58 @@
+#+title: DJS-130-bootloader
+#+date: 2021-04-18
+
+DJS-130 手拨十三条
+
+#+begin_src assembled
+                ;BOOTSTRAP LOADER (TELETYPE VERSION)     
+                ;THIS LOADER IS PLACED IN MEMORY MANUALLY
+                ;USING THE COMPUTER CONSOLE SWITCHES     
+                ;IT IS USED TO LOAD THE BLOCK BINARY     
+                ;LOADER INTO MEMORY.                     
+                
+                ;THIS LOADER IS NOT DISTURBED BY ANY STANDARD
+                ;PROGRAMS AND SHOULD REMAIN IN CORE UNLESS
+                ;DISTURBED BY AN UNDEBUGGED USER PROGRAM.
+                
+                ;IT MAY BE PLACED ANYWHERE IN CORE AND THE
+                ;BLOCK BINARY LOADER WILL BE LOADED RELATIVE
+                ;TO IT.
+                
+                ;NORMALLY, IT RESIDES IN THE UPPER LOCATIONS
+                ;OF THE MEMORY SYSTEM.
+                
+                ;IT IS SHOWN HERE ASSEMBLED WITH AN ORIGIN OF 7757
+                ;AND HENCE IT IS SHOWN FOR A 4K SYSTEM.
+                
+                ;TO OPERATE:
+                ;      1. PLACE BINARY BLOCK LOADER TAPE IN READER
+                ;         AND SET IT TO START
+                ;      2. PRESS RESET
+                ;      3. SET SWITCHES TO 07770 (FOR 4K SYSTEM)
+                ;      4. PRESS START
+                ;      5. BINARY BLOCK LOADER WILL BE LOADED
+                ;         AND COMPUTER WILL HALT
+                ;         WITH ADDRESS = 0775 (FOR 4K SYSTEM).
+      007757    .LOC 7757
+                
+07757 126440    GET:    SUBO 1,1       ;CLEAR AC1,CRY
+07760 063610            SKPDN TTI
+07761 000777            JMP .-1        ;WAIT FOR DONE FLAG
+07762 060510            DIAS 0,TTI     ;RED INTO AC0 AND RESTART
+                           ;READ
+07763 127100            ADDL 1,1       ;SHIFT AC1 LEFT
+07764 127100            ADDL 1,1       ;4 PLACES
+07765 107003            ADD 0,1,SNC    ;ADD IN THE NEW WORD
+07766 000772            JMP GET+1      ;FULL WORD NOT ASSEMBLED YET
+07767 001400            JMP 0,3        ;OK, EXIT
+                
+                ;BOOTSTRAP LOADER STARTS HERE
+07770 060110    BSTRP:  NIOS TTI       ;START THE READER
+07771 004766            JSR GET        ;GET A WORD
+07772 044402            STA 1,.+2      ;STORE IT TO EXECUTE IT
+07773 004764            JSR GET        ;GET ANOTHER WORD
+                                       ;THIS WILL CONTAIN A STA INSTR
+                                       ;THIS WILL CONTAIN JMP .-4
+                
+                .END
+#+end_src
