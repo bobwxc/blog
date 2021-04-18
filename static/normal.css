@@ -65,6 +65,11 @@ figure embed {
   max-width: 100%;
 }
 
+pre {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1em;
+}
 /*base*/
 code {
   white-space: pre-wrap;
