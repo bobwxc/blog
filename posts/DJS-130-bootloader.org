@@ -3,7 +3,7 @@
 
 DJS-130 手拨十三条
 
-#+begin_src assembled
+#+begin_src assembly
                 ;BOOTSTRAP LOADER (TELETYPE VERSION)     
                 ;THIS LOADER IS PLACED IN MEMORY MANUALLY
                 ;USING THE COMPUTER CONSOLE SWITCHES     
