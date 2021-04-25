@@ -21,10 +21,10 @@ do
 		if [[ $i != 'static' ]] && [[ $i != 'html' ]] && [[ -d $i ]]
 		then
 				echo -e "\033[32mDIR\033[0m $i"
-				echo -e "## $i\n" >> README.md 
+				echo -e "## $i\n" >> README.md
 
 				rm ./$i/*.html
-				
+
 				for j in `ls $i`
 				do
 						if [[ -r "./$i/$j" ]] && [[ ! -d "./$i/$j" ]]
@@ -32,7 +32,7 @@ do
 								echo -e "  \033[33mFILE\033[0m $j"
 
 								pandoc -s --toc --css ../static/normal.css ./$i/$j -o ./$i/$j.html
-								
+
 								s="- [${j%.*}]"
 								a=`echo "(./html/$j.html)\n" | sed "s/ /%20/g"`
 								echo -e "$s$a" >> README.md
@@ -42,7 +42,7 @@ do
 						then
 								cp -r ./$i/$j ./html/
 						fi
-						
+
 
 				done
 
