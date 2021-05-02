@@ -26,6 +26,8 @@ Welcome to my small blog!!!
 
 - [Debian 项目宪章（1.7版本）](./html/Debian%20项目宪章（1.7版本）.md.html)
 
+- [FOSS之基金会 中文翻译](./html/FOSS之基金会%20中文翻译.md.html)
+
 - [GFW 技术评论](./html/GFW%20技术评论.md.html)
 
 - [Hello-ipfs](./html/Hello-ipfs.md.html)
@@ -255,4 +257,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-04-25T14:19:51+00:00`
+Generate Time: `2021-05-02T10:33:59+00:00`
