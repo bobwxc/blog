@@ -1,0 +1,862 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FOSS之基金会</title>
+
+<meta name="description" content="FOSS之基金会">
+<meta name="keywords" content="FOSS之基金会">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<style type="text/css">
+body {
+  max-width: 800px;
+  margin-left:auto;
+  margin-right:auto;
+  color: #3f3f3f;
+}
+
+a {
+  text-decoration: none;
+  color: #888888;
+}
+
+a:hover {
+  color: #444444;
+}
+
+blockquote {
+  position: relative;
+}
+
+blockquote:before {
+  color: #000000;
+  content: "\201C";
+  font-size: 2rem;
+  position:absolute;
+  left: -2rem;
+  top: -0.5rem;
+}
+
+#backtop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+@media print{
+  #backup {
+    display:none;
+  }
+  
+  a[href^="http://"]:after {
+    content: " (" attr(href) ") ";
+  }
+}
+</style>
+
+
+</head>
+
+<body lang="zh">
+<h1 class="settitle" align="center">FOSS之基金会</h1>
+
+
+
+
+
+<p align="center">——共性、不足与建议</div>
+<p>原作：Martin Michlmayr 2021-04
+<br/>
+中译：bobwxc 2021-05
+</p>
+
+<blockquote>
+<p>本文为《FOSS Foundations——Commonalities, Deficiencies, and Recommendations》Martin Michlmayr 的中文译本。本译文以<a href="https://creativecommons.org/licenses/by-sa-nc/4.0/">署名-相同方式分享-禁止商用 4.0 国际许可证（CC BY-SA-NC 4.0）</a>分发。
+</p>
+<p>This article is a Chinese translation of “FOSS Foundations - Commonalities, Deficiencies, and Recommendations” by Martin michelmayr. This translation is distributed under <a href="https://creativecommons.org/licenses/by-sa-nc/4.0/">CC BY-SA-NC 4.0 License</a>.
+</p>
+<p><a href="https://www.cyrius.com/foss-foundations/foss-foundations-research.pdf">https://www.cyrius.com/foss-foundations/foss-foundations-research.pdf</a>
+</p></blockquote>
+
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+<ul class="no-bullet">
+<li><a name="toc-Qian-Yan-" href="#Qian-Yan-">1 前言</a>
+<ul class="no-bullet">
+  <li><a name="toc-Bei-Jing-" href="#Bei-Jing-">1.1 背景</a></li>
+  <li><a name="toc-Mu-De-" href="#Mu-De-">1.2 目的</a></li>
+  <li><a name="toc-Zhu-Ti-" href="#Zhu-Ti-">1.3 主题</a></li>
+  <li><a name="toc-Mu-Biao-Shou-Zhong-" href="#Mu-Biao-Shou-Zhong-">1.4 目标受众</a></li>
+  <li><a name="toc-Zan-Zhu-Fang-" href="#Zan-Zhu-Fang-">1.5 赞助方</a></li>
+</ul></li>
+<li><a name="toc-Zi-You-_002fKai-Yuan-Ruan-Jian-Ji-Jin-Hui-" href="#Zi-You-_002fKai-Yuan-Ruan-Jian-Ji-Jin-Hui-">2 自由/开源软件基金会</a>
+<ul class="no-bullet">
+  <li><a name="toc-Fen-Lei-" href="#Fen-Lei-">2.1 分类</a></li>
+  <li><a name="toc-Kuo-Da-Ji-Jin-Hui-De-Zuo-Yong-" href="#Kuo-Da-Ji-Jin-Hui-De-Zuo-Yong-">2.2 扩大基金会的作用</a></li>
+  <li><a name="toc-Zu-Zhi-De-Duo-Yang-Xing-" href="#Zu-Zhi-De-Duo-Yang-Xing-">2.3 组织的多样性</a></li>
+  <li><a name="toc-Ji-Zhu-Ying-Xiang-Xian-Zhi-" href="#Ji-Zhu-Ying-Xiang-Xian-Zhi-">2.4 技术影响限制</a></li>
+  <li><a name="toc-Huo-Dong-" href="#Huo-Dong-">2.5 活动</a></li>
+  <li><a name="toc-Chi-Xu-Xing-" href="#Chi-Xu-Xing-">2.6 持续性</a></li>
+  <li><a name="toc-Ming-Que-De-Xian-Zhi-" href="#Ming-Que-De-Xian-Zhi-">2.7 明确的限制</a></li>
+  <li><a name="toc-Chai-Ju-" href="#Chai-Ju-">2.8 差距</a></li>
+  <li><a name="toc-Tiao-Zhan-" href="#Tiao-Zhan-">2.9 挑战</a></li>
+  <li><a name="toc-Jie-Chu-Xian-Zhi-" href="#Jie-Chu-Xian-Zhi-">2.10 解除限制</a></li>
+  <li><a name="toc-Ren-Zhi-" href="#Ren-Zhi-">2.11 认知</a></li>
+  <li><a name="toc-Zong-Jie-" href="#Zong-Jie-">2.12 总结</a></li>
+</ul></li>
+<li><a name="toc-Zhu-Ce-Zu-Zhi-" href="#Zhu-Ce-Zu-Zhi-">3 注册组织</a>
+<ul class="no-bullet">
+  <li><a name="toc-Zhu-Ce-Fa-Ren-Zu-Zhi-De-Yuan-Yin-" href="#Zhu-Ce-Fa-Ren-Zu-Zhi-De-Yuan-Yin-">3.1 注册法人组织的原因</a></li>
+  <li><a name="toc-Guan-Xia-Qu-Yu-He-Fa-Lu-Jia-Gou-" href="#Guan-Xia-Qu-Yu-He-Fa-Lu-Jia-Gou-">3.2 管辖区域和法律架构</a></li>
+  <li><a name="toc-Cheng-Li-Xin-Zu-Zhi-" href="#Cheng-Li-Xin-Zu-Zhi-">3.3 成立新组织</a></li>
+  <li><a name="toc-Gong-Gu-_201cJi-Jin-Hui-De-Ji-Jin-Hui-_201dMo-Shi-" href="#Gong-Gu-_201cJi-Jin-Hui-De-Ji-Jin-Hui-_201dMo-Shi-">3.4 巩固“基金会的基金会”模式</a></li>
+  <li><a name="toc-Yu-Duo-GeZu-Zhi-He-Zuo-De-Xiang-Mu-" href="#Yu-Duo-GeZu-Zhi-He-Zuo-De-Xiang-Mu-">3.5 与多个组织合作的项目</a></li>
+  <li><a name="toc-Fei-Ying-Li-Zhuang-Tai-De-Zhong-Yao-Xing-" href="#Fei-Ying-Li-Zhuang-Tai-De-Zhong-Yao-Xing-">3.6 非营利状态的重要性</a></li>
+  <li><a name="toc-Zong-Jie--1" href="#Zong-Jie--1">3.7 总结</a></li>
+</ul></li>
+<li><a name="toc-Za-Xiang-Zhu-Ti-" href="#Za-Xiang-Zhu-Ti-">4 杂项主题</a>
+<ul class="no-bullet">
+  <li><a name="toc-Gong-Si-Juan-Zeng-" href="#Gong-Si-Juan-Zeng-">4.1 公司捐赠</a></li>
+  <li><a name="toc-Zui-Jia-Shi-Jian-" href="#Zui-Jia-Shi-Jian-">4.2 最佳实践</a></li>
+  <li><a name="toc-Yu-Qi-Ta-Ji-Jin-Hui-De-He-Zuo-" href="#Yu-Qi-Ta-Ji-Jin-Hui-De-He-Zuo-">4.3 与其他基金会的合作</a></li>
+  <li><a name="toc-COVID_002d19De-Ying-Xiang-" href="#COVID_002d19De-Ying-Xiang-">4.4 COVID-19的影响</a></li>
+</ul></li>
+<li><a name="toc-Wen-Ti-He-Tao-Lun-Yao-Dian-" href="#Wen-Ti-He-Tao-Lun-Yao-Dian-">5 问题和讨论要点</a></li>
+<li><a name="toc-Jian-Yi-" href="#Jian-Yi-">6 建议</a>
+<ul class="no-bullet">
+  <li><a name="toc-Zu-Zhi-" href="#Zu-Zhi-">6.1 组织</a></li>
+  <li><a name="toc-Ji-Jin-Hui-She-Qu-" href="#Ji-Jin-Hui-She-Qu-">6.2 基金会社区</a></li>
+  <li><a name="toc-Zeng-Kuan-Ji-Gou-" href="#Zeng-Kuan-Ji-Gou-">6.3 赠款机构</a></li>
+  <li><a name="toc-Gong-Si-_002cZheng-Fu-_002cRen-He-Yi-Lai-Kai-Yuan-De-Ren-" href="#Gong-Si-_002cZheng-Fu-_002cRen-He-Yi-Lai-Kai-Yuan-De-Ren-">6.4 公司，政府，任何依赖开源的人</a></li>
+</ul></li>
+<li><a name="toc-Fu-Lu-" href="#Fu-Lu-">7 附录</a>
+<ul class="no-bullet">
+  <li><a name="toc-Yan-Jiu-Fang-Fa-" href="#Yan-Jiu-Fang-Fa-">7.1 研究方法</a></li>
+  <li><a name="toc-Zhi-Xie-" href="#Zhi-Xie-">7.2 致谢</a></li>
+  <li><a name="toc-Xiang-Guan-Gong-Zuo-" href="#Xiang-Guan-Gong-Zuo-">7.3 相关工作</a></li>
+</ul></li>
+
+</ul>
+</div>
+
+
+<a name="Qian-Yan-"></a>
+<h2 class="chapter">1 前言</h2>
+
+<a name="Bei-Jing-"></a>
+<h3 class="section">1.1 背景</h3>
+
+<p>自由/开源软件基金会是以多种方式支持开源项目的组织（通常是非营利组织）。
+</p>
+<blockquote>
+<p><i>译注：FOSS，Free and Open Source Software，即 自由/开源软件。</i>
+</p>
+</blockquote>
+<a name="Mu-De-"></a>
+<h3 class="section">1.2 目的</h3>
+
+<p>本项目研究了自由/开源软件基金会，以便更好地了解它们在促进开放源码项目的成功和可持续性方面的作用。旨在更好地了解自由/开源软件基金会面临的业务和挑战，并找到可改进和合作的领域。
+</p>
+<a name="Zhu-Ti-"></a>
+<h3 class="section">1.3 主题</h3>
+
+<p>本报告涵盖以下主题：
+</p>
+<ul>
+<li> 基金会的作用与活动
+</li><li> 面临的挑战和提供服务的差距
+</li><li> 运营方面，包括发起组织的原因和管辖范围的选择
+</li><li> 趋势，如“基金会的基金会”模式
+</li><li> 针对不同利益相关方的建议
+</li></ul>
+
+<a name="Mu-Biao-Shou-Zhong-"></a>
+<h3 class="section">1.4 目标受众</h3>
+
+<p>本报告针对那些想更好地了解自由/开源软件基金会的性质、作用和运作的人；特别是涉及参与运营、考虑创建以及支持这些基金会的人（资助机构，公司等）。
+</p>
+<a name="Zan-Zhu-Fang-"></a>
+<h3 class="section">1.5 赞助方</h3>
+
+<p>本研究得到了 Ford 基金会 和 Alfred P. Sloan 基金会的赞助。
+</p>
+<a name="Zi-You-_002fKai-Yuan-Ruan-Jian-Ji-Jin-Hui-"></a>
+<h2 class="chapter">2 自由/开源软件基金会</h2>
+
+<a name="Fen-Lei-"></a>
+<h3 class="section">2.1 分类</h3>
+
+<p>自由和开放源码软件基金会在支持开放源码项目方面发挥着越来越重要的作用，为这些项目的成功和可持续性作出了贡献。像开放源码项目一样，自由和开放源码软件基金会有各种各样的形式。
+</p>
+<p>Javier Luis Cánovas Izquierd 和 Jordi Cabo 的<a href="https://arxiv.org/pdf/2005.10063.pdf">一篇论文</a>根据三个正交维度对此类组织进行了分类：
+</p>
+<ul>
+<li> 地理范围：本地或全球关注
+</li><li> 覆盖领域：关注特定项目或领域，或更广泛的关注，可能作为一个伞式组织服务
+</li><li> 透明度：治理（如章程）和运营的透明度
+</li></ul>
+
+<p>这项研究考虑了所有这些方面的组织。像 FOSSASIA 和欧洲自由软件基金会这样的组织有一个相当具体的地理范围（尽管仍相当大），而像 Eclipse 基金会这样的组织渴望服务于一个全球社区。
+</p>
+<p>Krita 基金会服务于 Krita 项目的开发。软件自由法律中心为开源项目提供法律支持，Linux 专业研究院为开源专业人士制定全球认证标准。KDE e.V. 和 Python 软件基金会为各自的社区提供服务，但随着这些社区的发展和壮大，它们的范围也在不断扩大。已有一些组织成为了主持范围广泛项目的伞式组织，其中包括行业协会，如 Linux 基金会和开放基础设施基金会，以及像软件自由保护协会和公益软件公司之类的慈善组织。
+</p>
+<p>就透明度而言，公开信息的数量差距较大。许多组织在其网站上发布董事会会议记录和章程，甚至可能邮寄组织的讨论列表，而有些组织则采取更封闭的方式。
+</p>
+<a name="Kuo-Da-Ji-Jin-Hui-De-Zuo-Yong-"></a>
+<h3 class="section">2.2 扩大基金会的作用</h3>
+
+<p>历史上，许多基金会都是为一个或多个项目提供服务的，包括资产管理（持有资金、商标和域名）、组织会议和其他服务。
+</p>
+<p>随着开源生态系统的变化，自由/开源软件基金会正在面对新的重要需求。特别是越来越多的公司通过开源协作来解决共同的问题。这可以降低成本，并导致更高质量的软件、更快速的发展。一些自由/开源软件基金会在这种开放合作中发挥了重要作用，它们提供了一个中立的场所以便公平竞争发展。
+</p>
+<p>由于控制的不平衡，由单一供应商控制的开源项目通常难以吸引不同的社区。通过把项目转移到一个中立的基金会可以弥补这一点，例如谷歌已经将 Kubernetes 的开发转移到云原生计算基金会（CNCF）来完成，他们表示来自任何人的贡献都是平等的。基金会有适当的治理结构来确保开放协作。
+</p>
+<p>自由/开源软件基金会也为这种开放合作提供了稳定性。Eclipse 基金会的执行董事 Mike Milinkovich 说：“我们在制度上被授权抵制那些试图重新定义开放在我们社区中意味着什么的人”，<a href="https://twitter.com/stephenrwalli/status/1358884485387808768">他还表示</a>，“我完全相信开源基金会是保护开放协作定义、实现开放式创新，并使其长期可持续发展的一个绝对不可分割的组成部分。”
+</p>
+<p>自由/开源软件基金会还提供了一系列避免和解决冲突的机制，正如<a href="https://link.springer.com/chapter/10.1007%2F978-3-030-33742-1_11">Florian Weikert、Dirk Riehle 和 Ann Barcomb 的论文</a>所强调的那样。
+</p>
+<a name="Zu-Zhi-De-Duo-Yang-Xing-"></a>
+<h3 class="section">2.3 组织的多样性</h3>
+
+<p>这项研究中一个有趣的发现是，组织在许多不同的方面都是千差万别的。前面提到的根据地理范围、覆盖领域和透明度对组织进行分类并不能完全公平地看待在许多方面观察到的巨大差异。例如：
+</p>
+<ul>
+<li> 一些行业组织（为会员利益服务）的运作方式与慈善机构（为公众服务）不同
+</li><li> 一些组织依靠有薪工作人员（一些组织拥有相当规模的团队），而另一些组织则依靠志愿劳动
+</li><li> 一些组织外包簿记，而另一些组织则因缺乏免费会计软件而举步维艰
+</li><li> 许多组织都面临资金短缺的问题，但有一个组织则表示，他们不会“向个人索取资金，因为公司的捐赠已经足够了”。
+</li></ul>
+
+<a name="Ji-Zhu-Ying-Xiang-Xian-Zhi-"></a>
+<h3 class="section">2.4 技术影响限制</h3>
+
+<p>虽然基金会的运作方式各有不同，但有一点常常出现：组织治理和项目治理之间的分裂。
+</p>
+<p>有几个组织明确表示，他们不支配或影响项目的技术方向。他们支持社区，但是项目的技术管理工作仍然存在。
+</p>
+<p>例如，Linux 基金会将资助和参与的明确分离描述为开放协作的五个关键原则之一：“此外，任何组织的开发者参与 Linux 基金会托管的开放源码项目都完全依赖于他们的资金支持。虽然一个组织可能会在财务上支持一个社区，但他们不能像其他任何人一样，在没有对代码库做出贡献的情况下引导技术方向。”
+</p>
+<p>同样，开放基础设施基金会也不要求任何组织为成功加入其社区而付费。工程副总裁 Thierry Carrez 补充道：“我们项目的技术治理与基金会治理脱节：一个人可能是我们项目的领导者，而他们的雇主不是基金会成员。这确保了项目对所有人开放，包括个人，最大限度地参与和采用。”
+</p>
+<a name="Huo-Dong-"></a>
+<h3 class="section">2.5 活动</h3>
+
+<p>自由/开源软件基金会为支持开源软件开展了广泛的活动。
+</p>
+<p>以下是基金会通常进行的活动的非详尽列表：
+</p>
+<ul>
+<li> 宣传
+      <ul>
+<li> 创造自由软件意识
+      </li><li> 推广软件
+      </li></ul>
+</li><li> 支持发展
+      <ul>
+<li> 创建文档
+      </li><li> 确保资源可用
+      </li><li> 提供开源指导
+      </li><li> 提供导师制
+      </li><li> 通过旅行津贴支持贡献者
+      </li><li> 为发展和其他活动提供补助
+      </li><li> 安排签证和工作许可
+      </li></ul>
+</li><li> 社区
+      <ul>
+<li> 构建和交换最佳实践
+      </li><li> 确保遵守自由/开源软件准则和质量标准
+      </li><li> 执行社区规范（如行为准则）
+      </li><li> 提供孵化过程
+      </li></ul>
+</li><li> 协作
+      <ul>
+<li> 提供中立、公平的竞争环境
+      </li><li> 实现对等的开放协作
+      </li><li> 联结开发人员、用户、公司、学术界和其他
+      </li><li> 提供处理利益冲突的机制
+      </li><li> 与其他组织建立桥梁
+      </li><li> 与标准组织的联络
+      </li></ul>
+</li><li> 建立商业生态系统
+      <ul>
+<li> 在市场上创造商业化机会
+      </li><li> 参考产品和解决方案
+      </li></ul>
+</li><li> 事件
+      <ul>
+<li> 帮助活动组织
+      </li><li> 组织比赛和黑客竞赛
+      </li></ul>
+</li><li> 资产管理
+      <ul>
+<li> 处理资产（金钱、硬件、域名、商标）
+      </li><li> 接受版权转让或贡献者许可协议
+      </li><li> 处理遗嘱中授予的决策权
+      </li></ul>
+</li><li> 法律事务
+      <ul>
+<li> 签订合同
+      </li><li> 审查法律协议
+      </li><li> 提供健全的法律基础设施
+      </li><li> 提供责任险和其他保险
+      </li></ul>
+</li><li> 筹款
+</li></ul>
+
+<a name="Chi-Xu-Xing-"></a>
+<h3 class="section">2.6 持续性</h3>
+
+<p>上节列出的所有活动都有助于项目的可持续性。
+</p>
+<p>本节重点介绍了一些明确促进项目可持续性的活动：
+</p>
+<ul>
+<li> 提供项目依赖的资源
+</li><li> 提供指导
+      <ul>
+<li> 培育新流程
+      </li><li> 交流最佳实践
+      </li><li> 外展活动
+      </li></ul>
+</li><li> 提高对项目的认知（例如利用品牌作为杠杆）
+</li><li> 证明自由/开源软件在特定领域是一种可靠的替代方案
+</li><li> 实现不同参与者的开放协作
+</li><li> 促进围绕项目的健康生态
+</li><li> 组织开发比赛和类似的开发工作
+</li><li> 申请补助
+</li></ul>
+
+<a name="Ming-Que-De-Xian-Zhi-"></a>
+<h3 class="section">2.7 明确的限制</h3>
+
+<p>一些组织明确地限制了它们的活动，部分因为要把重点放在具体问题上，部分因为哲学上的原因。
+</p>
+<ul>
+<li> 我们不影响项目的技术方向
+</li><li> 我们不雇佣员工来编写软件（但有一些合同），或我们没有为任何技术开发提供资金
+      <ul>
+<li> 在某些情况下，这是出于哲学原因（组织应提供基础设施，但不参与开发）
+      </li><li> 在其他情况下，这是因为（公司）没有必要雇用开发人员从事软件方面的工作）
+      </li></ul>
+</li><li> 我们避免类似组织已经做的活动
+</li><li> 我们不提供支持
+</li><li> 我们没有一个全球性的关注点——我们关注的是一个特定的地区
+</li><li> 我们不与会员竞争（例如通过提供培训或咨询）
+</li><li> 我们不支持闭源软件或仅开放核心
+</li><li> 我们不允许单一供应商的项目
+</li><li> 我们不需要任何组织为成功加入社区而付费
+</li></ul>
+
+<a name="Chai-Ju-"></a>
+<h3 class="section">2.8 差距</h3>
+
+<p>当然，还存在一些差距（通常由于资源限制，组织希望更积极地开展工作，但实际上并非如此）：
+</p>
+<ul>
+<li> 项目营销与招聘
+</li><li> 全职员工
+</li><li> 减少基础设施对GitHub等专有平台的依赖
+</li><li> 授权写作服务
+</li><li> 所有项目共享的社区管理器
+</li><li> 贡献者指导计划
+</li><li> 项目孵化
+</li></ul>
+
+<a name="Tiao-Zhan-"></a>
+<h3 class="section">2.9 挑战</h3>
+
+<p>组织面临许多挑战，包括：
+</p>
+<ul>
+<li> 拓展和增长
+      <ul>
+<li> 设置优先级
+      </li><li> 决定帮助谁以及如何帮助
+      </li><li> 雇佣全职员工（行政机构、监督等）
+      </li><li> 随着会员人数的增加，难以达到法定人数
+      </li></ul>
+</li><li> 资金
+      <ul>
+<li> 普遍缺乏资金
+      </li><li> 确保持续可靠的资金流
+      </li><li> 补助可能非常不可预测
+      </li><li> 非营利形式的拨款可能是僵化的官僚作风
+      </li><li> 资金有限可能是个问题：乏味的工作得不到资金支持
+      </li><li> 捐赠疲劳
+      </li><li> 非营利组织的预算比公司小得多
+      </li></ul>
+</li><li> 吸引主流媒体关注
+</li><li> 管理组织的间接成本很高
+</li><li> 花钱：社区不愿意花钱
+</li><li> 向世界某些地区的个人提供补助（银行条款等）
+</li><li> 很难跟上社区不断变化的需求
+</li><li> 不断变化的价值主张格局，使收入与服务的一致性复杂化
+</li><li> 关于积极参与开源社区而不仅仅是消费的重要性的持续教育
+</li><li> 志愿者倦怠
+</li><li> 志愿者可用性
+</li><li> 非美国籍董事、高管和监管机构通常只允许美国籍人士访问某些银行账户
+</li></ul>
+
+<a name="Jie-Chu-Xian-Zhi-"></a>
+<h3 class="section">2.10 解除限制</h3>
+
+<p>如果没有限制，各组织希望：
+</p>
+<ul>
+<li> 接受更多项目
+</li><li> 扩展服务组合
+</li><li> 雇佣员工
+</li><li> 制定长期财务计划
+</li><li> 建立捐赠基金
+</li><li> 活跃于更多的地理区域
+</li><li> 投资不那么迷人但必不可少的活动
+</li><li> 创建更好的软件（如仪表板）来管理基金会
+</li></ul>
+
+<a name="Ren-Zhi-"></a>
+<h3 class="section">2.11 认知</h3>
+
+<p>一些组织提到，他们对自己的工作和每天面临的挑战缺乏认识。
+</p>
+<p>另一些组织表示希望有更好的数据来说明正在进行的工作的范围和数量，以便反映他们的工作和他们所服务的项目的影响。
+</p>
+<p>还有一些组织表示，开源用户并不完全理解捐赠的重要性（或者了解贡献机制）。
+</p>
+<a name="Zong-Jie-"></a>
+<h3 class="section">2.12 总结</h3>
+
+<ul>
+<li> 基金会在关注点、运作和其他方面都非常多样化
+</li><li> 基金会为开源项目提供了重要服务
+</li><li> 一些基金会充当一个公开合作的中立场所
+</li><li> 基金会提供稳定性和持久性
+</li><li> 基金会减少单参与者的不当影响
+</li><li> 基金会以多种方式支持项目的可持续性
+</li><li> 组织限制他们的活动是为了集中注意力或出于哲学上的原因
+</li><li> 由于资源限制，有几个差距没有解决
+</li><li> 组织面临一系列挑战，包括
+      <ul>
+<li> 认知
+      </li><li> 扩展和增长
+      </li><li> 资金
+      </li></ul>
+</li></ul>
+
+<a name="Zhu-Ce-Zu-Zhi-"></a>
+<h2 class="chapter">3 注册组织</h2>
+
+<a name="Zhu-Ce-Fa-Ren-Zu-Zhi-De-Yuan-Yin-"></a>
+<h3 class="section">3.1 注册法人组织的原因</h3>
+
+<p>需要注册法人组织的原因有很多：
+</p>
+<ul>
+<li> 组织可以提供更好的中立性和公平竞争环境
+</li><li> 组织比个人提供更多的信任和稳定性
+</li><li> 资产所有权（金钱、域名、商标、硬件等）与特定人员无关
+</li><li> 公司提供一些责任保护
+</li><li> 慈善使命确保责任
+</li><li> 可以向没有正式组织的项目提供财政赞助
+</li><li> 某些行为方（如政府和公共机构）更喜欢与某个组织打交道
+</li><li> 可能使筹款更有效（例如有些人不想捐赠给个人）
+</li><li> 可以获得更多的资金来源（例如公共机构的赠款）
+</li><li> 只有在非盈利结构下才有可能进行免税捐赠
+</li><li> 可雇佣全职员工提供服务
+</li><li> 组织可以签订合同
+</li><li> 组织提供更多的机构记忆和一致性
+</li><li> 可通过签署谅解备忘录建立国际组织的合作框架
+</li></ul>
+
+<a name="Guan-Xia-Qu-Yu-He-Fa-Lu-Jia-Gou-"></a>
+<h3 class="section">3.2 管辖区域和法律架构</h3>
+
+<p>从历史上看，选择某一特定管辖区域的最常见原因是某一特定州或国家有一个人愿意从事这项工作。不像开源项目可以很容易地在网上启动，注册一个组织可能涉及到人与人之间的交互。例如，一些银行要求亲自开立商业账户，并且需要面谈来添加账户签署人。此外，一些美国银行要求提供账号签署人的社会保险号码（SSN），这对于在美国注册但拥有国际“版图”的组织来说可能是个问题。
+</p>
+<p>近年来，在注册之前，大家似乎会更加努力评估不同的司法管辖区（特别是对于有资源进行此类调查的大型组织），尽管在成员愿意从事工作的地方注册的做法仍然很普遍（尤其是对于较小的组织）。
+</p>
+<p>大量自由/开源软件基金会在美国注册。最常见的形式是：
+</p>
+<ul>
+<li> 501(c)(3)—慈善组织：公益
+</li><li> 501(c)(6)—贸易组织：会员利益
+</li></ul>
+
+<p>一些组织由于所需的文书工作没有申请免税地位。几年来，美国国税局批准了少数与自由/开源软件有关的非营利组织的申请（参见这篇文章：<a href="https://lwn.net/Articles/604885/">Yorba 面临的问题</a>），但几年前<a href="https://opensource.org/node/840">政策</a>发生了转变，这似乎不再是一个问题。
+</p>
+<p>虽然有大量组织的总部设在美国，但其他国家也有许多组织，包括加拿大、比利时、荷兰和德国。不同的非营利形式有许多。考虑到大多数董事会的国际化性质，文书工作是否可以用英语提交就成了一个问题。当被问及他们的所在地时，一些组织提及选择一个更“中立”或“不太政治化”的管辖区域（与美国相比）是根本。
+</p>
+<p>值得注意的是，<a href="https://eclipse-foundation.blog/2021/01/14/welcome-to-the-eclipse-foundation-aisbl/">Eclipse 基金会最近从一个美国贸易协会变成了一个比利时非盈利公司</a>（AISBL，“无盈利目的的协会”）。他们强调了他们的全球开源重点、欧洲对开源的拥护，“在员工、项目、开发人员和成员方面”事实上他们已经是欧洲最大的开源组织（在欧洲有170多个成员和900多个提交人）。
+</p>
+<p>法律架构带有某些义务和限制，例如：
+</p>
+<ul>
+<li> 文书工作
+</li><li> 审计要求
+</li><li> 对政治活动和游说的限制
+</li></ul>
+
+<p>虽然文书工作被认为较困难（由较小的组织），但限制往往被视为是有利的：这会导致更大的透明度，并给予公众该组织专注于其使命的信心。事实上，文档基金会（Document Foundation）选择德国“Stiftung”的一个原因是，这种类型使其规则的某些元素不可改变，因此可以长期稳定。
+</p>
+<p>一些组织提到了一些，当组织立足于一个具体的管辖区，同时基本上服务于一个世界范围的社区时，固有的问题。例如，接受来自不同地区的捐款并不那么顺当（例如，欧元区内的银行转账是免费的，但总部设在美国的组织通常在欧洲没有银行账户）。当捐赠者位于另一个司法管辖区时，捐赠的抵税问题非常麻烦。
+</p>
+<a name="Cheng-Li-Xin-Zu-Zhi-"></a>
+<h3 class="section">3.3 成立新组织</h3>
+
+<p>计划成立新组织的人应该考虑什么？目前最常见的答案是“不要这样做”：考虑加入一个现有的组织。花足够的时间评估现有组织，并询问您无法从现有组织获得什么。大多数人都大大低估了管理一个组织的工作量。
+</p>
+<p>如果成立新的组织有意义（在仔细研究了所有其他选项之后），则应考虑以下几点：
+</p>
+<ul>
+<li> 咨询现有组织
+</li><li> 寻求税务和法律方面的专业建议
+</li><li> 仔细检查您是否准备好承担管理组织带来的管理负担
+</li><li> 在你想建立组织的国家有足够的人员
+</li><li> 招募一个具有丰富经验的专门董事会
+</li><li> 知道筹款很难
+</li><li> 不要尝试过度建设，应允许未来发展
+</li><li> 谨慎增长：可持续性很难实现
+</li><li> 考虑所有决策机构的利益冲突，并在冲突发生前找出解决方法。你无法在冲突已经结束的时候这么做。
+</li></ul>
+
+<a name="Gong-Gu-_201cJi-Jin-Hui-De-Ji-Jin-Hui-_201dMo-Shi-"></a>
+<h3 class="section">3.4 巩固“基金会的基金会”模式</h3>
+
+<p>如前节所述，管理一个组织需要大量的工作。自由/开源软件基金会领域的某种程度的整合也就不足为奇了。例如，X.Org基金会决定<a href="https://lwn.net/Articles/638549/">放弃自己的法律架构</a>，转而加入一个伞式组织“公共利益软件公司”（SPI）。Gentoo基金会也在评估加入其他组织是否更有益处。
+</p>
+<p>有趣的是，X.Org基金会，以及开放生物信息基金会（OBF），也是SPI的一部分，保留了自己的治理架构（包括董事会），但没有自己的公司架构。这就是“基金会的基金会”模式，其中一个基金会为其他基金会提供法律上的保护伞和一系列服务。
+</p>
+<p>除了减少行政工作外，还可能有其他原因促使加入另一个现有的组织。Node.js 基金会和 JS 基金会<a href="https://linuxfoundation.org/press-release/node-js-foundation-and-js-foundation-merge-to-form-openjs-foundation/">合并形成 OpenJS Foundation</a>，因为它们有着相似的目标（即促进 Javascript 生态的增长）。
+</p>
+<p>组织也可以从调整中受益，以增加其影响范围。FINOS 于 2020 年<a href="https://www.linuxfoundation.org/blog/finos-joins-the-linux-foundation/">加入 Linux 基金会</a>，部分是因为这个原因，部分也是得益于 Linux 基金会的“支持软件供应，包括但不限于培训、认证和活动管理”。
+</p>
+<p>Linux 基金会很有趣，因为它是“基金会的基金会”模式的主要参与者。他们<a href="https://www.linuxfoundation.org/blog/the-linux-foundation-its-not-just-the-linux-operating-system/">将其描述</a>为开放协作的“基金会即服务”模式。这种方法非常成功，他们添加了<a href="https://www.linuxfoundation.org/en/projects/">许多引人注目的项目和组织</a>，包括 Kubernetes 和 Let&rsquo;s Encrypt。
+</p>
+<p>我们生活的时代，软件即服务已经成为一种普遍的范例。为什么不把基金会作为一项服务呢？Stripe 的 Atlas 通过点击一些按钮就可以创建一家公司。自由/开源软件基金会是否同样可以这样？
+</p>
+<p>Linux 基金会正朝着这个方向发展。他们的 <a href="https://lfx.linuxfoundation.org/">LFX 计划</a>正在创建一系列对开源项目和组织有益的工具：“使用为贡献者构建的工具来监控项目和社区的健康状况、维护运营，并发展生态系统”，还有CLA（贡献者许可协议）、众筹和导师制的管理。
+</p>
+<p><a href="https://opencollective.com/">公开集体</a>是另一项举措，它使资金的筹集和使用变得容易且透明。该平台可通过<a href="https://www.oscollective.org/">开源集体</a>用于开源项目。他们将自己描述为“分布式协作世界与会计和发票世界之间的API”。开发人员可以专注于他们的项目，而组织将“负责所有的会计、税务、发票和管理”。开源集体也可以<a href="https://www.oscollective.org/trademarks">持有项目的商标</a>，但与其他一些伞式组织相比，服务的范围是有限的。
+</p>
+<p>这个方向很有趣。这项研究表明，一些小型基金会受到文书工作、会计和其他管理任务的困扰；虽然工具化并不能消除对工作的需求，但它有巨大的潜力使工作变得非常简单。观察这个工具是否可以被其他组织使用将是很有趣的。Linux 基金会 LFX 的一些组件将开源发布，但是其他组织是否可以轻松地使用这些组件还有待观察。
+</p>
+<p>最后，在进行整合的同时，新的自由/开源软件基金会正在定期出现，反映了开源生态系统的增长。这可以是一个全新的组织，比如 Zig 软件基金会，它的任务是发展 Zig 编程语言。这也可能是由于项目留下了一个伞组织，以运行自己的基础。后者的一个例子是 Clojustics Together 基金会，它的<a href="https://sfconservancy.org/news/2020/may/18/ClojuristsSunset/">创建部分是为了</a>使“营利公司更容易联合起来资助和影响重要的开源工作”。
+</p>
+<a name="Yu-Duo-GeZu-Zhi-He-Zuo-De-Xiang-Mu-"></a>
+<h3 class="section">3.5 与多个组织合作的项目</h3>
+
+<p>本研究还发现一些组织拥有多个法人实体；此外，在某些情况下，可能有多个组织为一个项目提供服务。
+</p>
+<p>最好的例子是 Mozilla 基金会及其子公司，盈利性的 Mozilla 公司。除了 Eclipse 基金会，还有<a href="https://www.eclipse.org/europe/faq.php">Eclipse Foundation Europe GmbH</a>，这是一家德国注册的营利性子公司。文件基金会正在讨论建立一个营利性的子公司。这些都是有附属机构的基金会的例子。
+</p>
+<p>此外，还有多个组织的项目。例如，PostgreSQL 项目使用公益软件公司来接受捐赠。同时，加拿大 PostgreSQL 社区协会为 PostgreSQL 项目持有域名和商标等资产。在不同的国家也有一些组织，主要是针对 PostgreSQL 事件（包括 PostgreSQL 巴西、PostgreSQL 欧洲、PostgreSQL 美国）。
+</p>
+<p>与 PostgreSQL 类似，Debian 项目使用世界各地的许多组织为项目提供服务和持有资产。商标由公共利益软件公司持有，该公司也接受捐赠，而欧洲的捐赠者更愿意捐赠给 Debian France 或 Debian.ch。
+</p>
+<p>最后，创建互补的组织来为同一个项目服务似乎是一个小趋势。Haskell.org 已经存在多年，为 Haskell 项目提供基础设施。尽管已有这个组织，最近仍成立了 Haskell 基金会（部分由 Haskell.org 的相关人员参与），以“扩大 Haskell 的应用范围”。同样，R 基金会多年来一直是 R 项目的组织总部。此外，R 财团作为 Linux Foundation 项目启动，部分原因是允许公司成员参与。
+</p>
+<p>这项研究没有对这方面进行更详细的调查，但更好地了解创建额外组织的原因及其关系（完全附属、友好合作等）会很有意思。
+</p>
+<a name="Fei-Ying-Li-Zhuang-Tai-De-Zhong-Yao-Xing-"></a>
+<h3 class="section">3.6 非营利状态的重要性</h3>
+
+<p>本研究中提出的另一个问题是非盈利状态的重要性。虽然大多数自由/开源软件基金会在其注册时是公认的非营利组织，但也有一些基金会不是公认的非营利组织。这可能是因为他们没有资源申请非营利性或免税的地位，因为他们看不到这样做的好处，或者因为在其关注的国家或地区没有合适的非盈利性结构。
+</p>
+<p>在这项研究中，一些组织强调了非盈利经营的优势，包括：
+</p>
+<ul>
+<li> 向捐赠者发出信号，表明政府制定的某些标准已经达到
+</li><li> 提高透明度（要求公开报告）
+</li><li> 免税状态
+</li><li> 捐赠的税收减免
+</li><li> 获得仅限 501(c)(3) 组织的补助金
+</li></ul>
+
+<p>然而，管理费用可能相当大，尤其是对于较小的组织。由于政府可能限制某些活动，灵活性也有限。
+</p>
+<p>我还不能确定哪些因素可能决定非营利状态何时重要，但这是一个有趣的问题。与之相关的一个问题是：税收减免对捐赠者是否重要。这是一个非常复杂的领域，因为捐赠通常只被认可给与捐赠者在同一个国家的慈善机构，这与开源的全球性质是不相容的。减税有时被列为是对捐赠者的一种激励，但它究竟在多大程度上影响了捐赠者的行为呢？
+</p>
+<a name="Zong-Jie--1"></a>
+<h3 class="section">3.7 总结</h3>
+
+<ul>
+<li> 需要组织结构的原因或其益处非常多
+</li><li> 许多基金会设在美国。
+      <ul>
+<li> 慈善机构致力于公益
+      </li><li> 贸易协会服务会员
+      </li></ul>
+</li><li> 美国以外有多家基金会，对特定国家没有明确的偏好
+</li><li> 管辖权的选择通常由愿意从事工作的当地人决定
+</li><li> 较小的组织认为文书工作和管理费用是个问题
+</li><li> 管理一个组织需要大量的工作，项目应该评估是否加入一个现有的组织，而不是创建自己的组织
+</li><li> “基金会即服务”模式越来越普遍
+</li><li> 如何改进工具以支持运作？
+</li><li> 一些项目采用多个组织的服务
+</li><li> 非营利性状态提供了某些好处，但也有限制
+</li></ul>
+
+<a name="Za-Xiang-Zhu-Ti-"></a>
+<h2 class="chapter">4 杂项主题</h2>
+
+<a name="Gong-Si-Juan-Zeng-"></a>
+<h3 class="section">4.1 公司捐赠</h3>
+
+<p>公司为什么向自由/开源软件基金会捐款的一些原因：
+</p>
+<ul>
+<li> 为了支持任务
+</li><li> 该公司依赖软件作为其基础设施的关键部分
+</li><li> 有助于项目的可持续发展
+</li><li> 有助于健康的生态
+</li><li> 与其他组织公开合作
+</li><li> 提高社区的知名度和参与度（例如通过会议赞助和参与）
+</li><li> 从社区招募人才
+</li><li> 展示领导力（以便接触新客户、新员工和业务伙伴）
+</li><li> 赞助是回馈社区的有效方式
+</li></ul>
+
+<p>贡献可以是时间和金钱的形式。
+</p>
+<p>代码贡献很常见，但对基金会工作重要性的理解却不那么普遍。公司通常不想对重要但乏味的工作投资。
+</p>
+<a name="Zui-Jia-Shi-Jian-"></a>
+<h3 class="section">4.2 最佳实践</h3>
+
+<p>各组织分享了一些最佳实践，包括：
+</p>
+<ul>
+<li> 知道何时去接触有报酬的专业人士
+</li><li> 无偿的律师很好，但你可以于有偿的法律支持中得到更好的服务
+</li><li> 为关键领导层制定过渡计划
+</li><li> 制定政策和期望
+</li><li> 为新董事创建入职信息
+</li><li> 为关键角色组建团队
+</li><li> 周期性讨论目标和愿景很重要；就像讨论感觉一样。
+</li><li> 当面会议很重要。投资于团队建设活动将极大地促进相互信任，共同努力，从而提高效率。
+</li><li> 回顾之前来学习和改进
+</li><li> 做好记录
+</li></ul>
+
+<a name="Yu-Qi-Ta-Ji-Jin-Hui-De-He-Zuo-"></a>
+<h3 class="section">4.3 与其他基金会的合作</h3>
+
+<p>自由/开源软件基金会社区曾多次被提到是与在类似领域工作的人分享经验和互动的好方法。社区不时组织会议，包括 FOSDEM 、LibrePlanet 和社区领导峰会（CLS）等活动。
+</p>
+<p>类似组织之间有一些非正式的、直接的合作，以便交流经验和讨论问题。这包括具有类似范围的组织（例如为志愿项目服务的伞式组织）或在同一管辖区内的组织（例如分享有关税务申报的实际信息或讨论有偿帮助的建议）。一些伞式组织将申请人推荐给可能更适合的其他组织。
+</p>
+<p>绝大多数受访者认为，各组织之间没有充分分享知识。
+</p>
+<a name="COVID_002d19De-Ying-Xiang-"></a>
+<h3 class="section">4.4 COVID-19的影响</h3>
+
+<p>一般来说，组织习惯于远程工作，对运营没有太大影响。然而，一些人提到缺乏当面会面不太好，因为这些有助于激励和沟通。封锁造成的精神损失也是一个预兆，由于日常工作的中断，工作人员的工作效率也会下降。
+</p>
+<p>关于对资金的影响，一些组织报告说，它们的资金受到很大影响。企业捐赠和赠款减少了。此外，会议是许多组织的巨大收入来源，因此受到了打击。一些组织还承担了取消会议的费用。由于经费减少，至少有一个组织不得不解雇几名工作人员。然而，也有一个组织实际上看到了来自个人捐赠者的激增（可能是由于人们居家办公时更多地使用了这些软件）。
+</p>
+<p>由于此次大流行，人们看到了依赖过少资金来源（特别是公司赞助）的问题。
+</p>
+<p>除了资金的影响，一些组织报告说，取消研讨、会议使信息更难传达出去。此外，一些组织还致力于建立人们之间的联系和信任，而这在当面研讨时更容易实现。
+</p>
+<p>大流行促使各组织改进其运作的数个方面。虽然许多会议被取消，但许多组织能够以以前无法想象的速度转向在线会议，一些组织使用自由/开源软件解决方案。一位受访者强调，在线会议导致来自更多地区的更多社区成员能够参与。不过，在线访问和时区可能是个问题。一些提供旅行补助的组织使补助更加灵活，可以用来参加在线会议（为亚洲和非洲等可能出现问题的地区的贡献者购买更好的互联网接入和电信设备）。
+</p>
+<p>一般来说，在线会议并不能完全替代见面会议，因为它们效率较低，而且不太能支持社交成分（建立信任、相互了解等）。然而，这它们可能是互补的，因为在线会议允许更大范围的参与。
+</p>
+<a name="Wen-Ti-He-Tao-Lun-Yao-Dian-"></a>
+<h2 class="chapter">5 问题和讨论要点</h2>
+
+<ul>
+<li> 软件
+      <ul>
+<li> 可以开发哪些软件来简化运作？
+      </li><li> 可以为所有人解决哪些共同需求？
+      </li><li> 可能的领域：
+            <ul>
+<li> 会计
+            </li><li> 资产管理（如商标期限）
+            </li></ul>
+</li><li> 基金会即服务是否可能？
+      </li></ul>
+</li><li> 非营利架构的重要性
+      <ul>
+<li> 行政负担是否大于好处？
+      </li><li> 哪些因素影响决策？
+      </li></ul>
+</li><li> 多个组织
+      <ul>
+<li> 在什么情况下拥有多个组织才有意义？
+      </li><li> 它们是什么关系？
+      </li></ul>
+</li><li> 认知
+      <ul>
+<li> 一般对基金会的工作了解甚少
+      </li><li> 如何将纯粹的消费者（公司、政府等）转变为积极的贡献者？
+      </li><li> 有魅力的活动被优先考虑，但不那么有魅力的活动被忽略
+      </li></ul>
+</li></ul>
+
+<a name="Jian-Yi-"></a>
+<h2 class="chapter">6 建议</h2>
+
+<a name="Zu-Zhi-"></a>
+<h3 class="section">6.1 组织</h3>
+
+<ul>
+<li> 制定应急和风险缓解计划
+      <ul>
+<li> 关键人员流失
+      </li><li> 资金减少
+      </li><li> 市场和社区的变化
+      </li></ul>
+</li><li> 多样化融资
+      <ul>
+<li> 过度依赖企业赞助
+      </li><li> 过度依赖会议收入
+      </li></ul>
+</li><li> 使在线会议无障碍
+      <ul>
+<li> 在不同时区主持会话
+      </li><li> 为带宽和网络摄像头提供资金
+      </li><li> 找到将面对面会议和在线会议结合起来的方法
+      </li></ul>
+</li><li> 创建内部文档
+      <ul>
+<li> 为新董事建立入职信息
+      </li><li> 找到保存机构记忆的方法
+      </li></ul>
+</li><li> 创建认知
+      <ul>
+<li> 更公开地谈论基金会所做的重要工作，即使被认为是“乏味的”
+      </li><li> 公开或直接与其他组织分享最佳实践
+      </li><li> 与其他组织讨论面临的挑战
+      </li></ul>
+</li></ul>
+
+<a name="Ji-Jin-Hui-She-Qu-"></a>
+<h3 class="section">6.2 基金会社区</h3>
+
+<ul>
+<li> 分享关于在线会议的见解：什么有效，什么无效
+</li><li> 分享关于不同国家法律架构的信息
+</li><li> 分享银行信息
+</li><li> 分享捐赠最佳实践
+      <ul>
+<li> 国际捐赠
+      </li><li> 捐赠者的税收减免
+      </li></ul>
+</li><li> 分享运营最佳实践
+      <ul>
+<li> 关于运行开源项目的许多最佳实践；部分基于基金会运营
+      </li><li> 投资决策
+      </li></ul>
+</li><li> 组织会议
+      <ul>
+<li> 定期召开开发人员研讨会议
+      </li><li> 编写会议记录来捕捉和分享见解
+      </li></ul>
+</li></ul>
+
+<a name="Zeng-Kuan-Ji-Gou-"></a>
+<h3 class="section">6.3 赠款机构</h3>
+
+<ul>
+<li> 简化应用程序
+      <ul>
+<li> 大多数自由/开源软件基金会没有全职的资助作家
+      </li><li> 对于自由/开源软件基金会来说，拨款往往过于官僚
+      </li></ul>
+</li><li> 为基础但不太“迷人”的工作提供资助机会
+</li><li> 为组织提供可靠的长期投资
+</li><li> 为赠款机构和自由/开源软件基金会创造更多的互动机会
+</li><li> 连接彼此存在类似问题的自由/开源软件基金会
+</li></ul>
+
+<a name="Gong-Si-_002cZheng-Fu-_002cRen-He-Yi-Lai-Kai-Yuan-De-Ren-"></a>
+<h3 class="section">6.4 公司，政府，任何依赖开源的人</h3>
+
+<ul>
+<li> 投资于您所依赖的技术
+</li><li> 考虑以多种方式捐款
+      <ul>
+<li> 让员工积极贡献（不仅仅是开发人员！）
+      </li><li> 提供知识和方法
+      </li><li> 直接给钱（最好没有什么限制）
+      </li></ul>
+</li><li> 尽量做到始终如一和可靠（在预算允许的范围内）
+</li></ul>
+
+<a name="Fu-Lu-"></a>
+<h2 class="chapter">7 附录</h2>
+
+<a name="Yan-Jiu-Fang-Fa-"></a>
+<h3 class="section">7.1 研究方法</h3>
+
+<p>本研究采用扎根理论的方法，对数据进行收集和分析，将来自多个不同来源的信息纳入统计，包括 FOSS 基金会网站、学术刊物、行业出版文章、会议记录等。此外，还向不同的基金会样本发送了调查问卷，由27家基金会完成。
+</p>
+<a name="Zhi-Xie-"></a>
+<h3 class="section">7.2 致谢</h3>
+
+<p>本报告以<a href="https://creativecommons.org/licenses/by-sa/4.0/">署名-相同方式分享 4.0 国际许可证（CC BY-SA 4.0）</a>分发。作者是 Martin Michlmayr。
+</p>
+<p>本报告由 Ford 基金会 和 Alfred P. Sloan 基金会赞助。这项研究是他们<a href="https://www.fordfoundation.org/campaigns/critical-digital-infrastructure-research/">关键数字基础设施研究计划</a>的一部分，研究了开放源代码在数字基础设施中的作用。
+</p>
+<p>技术培育中心（Center for the Cultivation of Technology）为这项研究提供了操作支持和研究见解。
+</p>
+<p>Stefano Zacchiroli 和 Allison Randal 为这项研究的设计提供了有价值的见解。
+</p>
+<p>Moritz Bartl、Michael Brennan、Matt Germonprez、Gijs Hillenius 和 Thomas Streinz 对这份研究报告提出了宝贵的意见。
+</p>
+<p>我要感谢所有参与这项研究的自由/开源软件基金会分享他们宝贵的见解！
+</p>
+<a name="Xiang-Guan-Gong-Zuo-"></a>
+<h3 class="section">7.3 相关工作</h3>
+
+<p>我还出版了<a href="https://www.cyrius.com/foss-foundations/growing-open-source-projects.pdf">《与稳定的基金会一起发展开源项目》</a>，这是一本关于许多开源面临的非技术性问题的入门书。这本初级读物概述了一些常见问题和思考，并解释了自由/开源软件基金会如何帮助开源项目取得成功。
+</p>
+
+<br/>
+
+<button id="backtop">Back Top</button>
+<script>
+	window.onload = function(){
+
+		var flag = false; 
+		var timer = null;
+		window.onscroll = function(){
+			if(!flag){
+				if(timer!=null){
+					clearInterval(timer);
+				}
+			}
+			flag = false;
+		}
+
+		var oBtn = document.getElementById('backtop');
+
+		oBtn.onclick = function(){
+
+			timer =  setInterval(function(){
+
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				var speed = Math.floor((-scrollTop)/20);
+				if(scrollTop==0){
+					clearInterval(timer);
+					timer = null;
+					return;
+				}
+
+				flag = true;
+				document.documentElement.scrollTop =
+					document.body.scrollTop = scrollTop+speed;
+
+			},30);
+		}
+	}
+
+</script>
+
+</body>
+</html>
