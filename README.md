@@ -4,8 +4,6 @@ title: bobwxc BLOG
 
 Welcome to my small blog!!!
 
-[![blogbuild](https://github.com/bobwxc/blog/actions/workflows/build.yml/badge.svg)](https://github.com/bobwxc/blog/actions/workflows/build.yml)
-
 ---
 
 ## posts
@@ -65,6 +63,8 @@ Welcome to my small blog!!!
 - [emoji](./html/emoji.md.html)
 
 - [eu数字服务新动向](./html/eu数字服务新动向.md.html)
+
+- [foss-foundations-research_zh](./html/foss-foundations-research_zh.pdf.html)
 
 - [gcc优化等级](./html/gcc优化等级.md.html)
 
@@ -257,4 +257,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-05-02T10:33:59+00:00`
+Generate Time: `2021-05-06T11:04:55+00:00`
