@@ -90,6 +90,8 @@ Welcome to my small blog!!!
 
 - [imap](./html/imap.md.html)
 
+- [ipfs-search](./html/ipfs-search.md.html)
+
 - [js异步回调地狱](./html/js异步回调地狱.md.html)
 
 - [kail u盘安装](./html/kail%20u盘安装.md.html)
@@ -190,6 +192,10 @@ Welcome to my small blog!!!
 
 - [在延安文艺座谈会上的讲话](./html/在延安文艺座谈会上的讲话.txt.html)
 
+- [地心游记](./html/地心游记.pdf.html)
+
+- [地心游记](./html/地心游记.tex.html)
+
 - [城市](./html/城市.md.html)
 
 - [希腊字母表 latex参考](./html/希腊字母表%20latex参考.md.html)
@@ -257,4 +263,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-05-06T11:04:55+00:00`
+Generate Time: `2021-05-15T12:42:49+00:00`
