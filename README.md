@@ -30,6 +30,8 @@ Welcome to my small blog!!!
 
 - [Hello-ipfs](./html/Hello-ipfs.md.html)
 
+- [In Solidarity with Library Genesis and Sci-hub](./html/In%20Solidarity%20with%20Library%20Genesis%20and%20Sci-hub.tex.html)
+
 - [Patch Workflow With Mutt - 2019](./html/Patch%20Workflow%20With%20Mutt%20-%202019.md.html)
 
 - [Perl简介](./html/Perl简介.md.html)
@@ -190,6 +192,8 @@ Welcome to my small blog!!!
 
 - [后浪简评 🌊](./html/后浪简评%20🌊.md.html)
 
+- [四库全书总目提要_横排](./html/四库全书总目提要_横排.tex.html)
+
 - [在延安文艺座谈会上的讲话](./html/在延安文艺座谈会上的讲话.txt.html)
 
 - [地心游记](./html/地心游记.pdf.html)
@@ -230,6 +234,8 @@ Welcome to my small blog!!!
 
 - [署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)概要](./html/署名-非商业性使用-相同方式共享%204.0%20国际%20(CC%20BY-NC-SA%204.0)概要.md.html)
 
+- [西行漫记](./html/西行漫记.tex.html)
+
 - [讲不听，听不改，还反咬一口](./html/讲不听，听不改，还反咬一口.md.html)
 
 - [诗词库](./html/诗词库.md.html)
@@ -263,4 +269,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-05-15T12:42:49+00:00`
+Generate Time: `2021-06-10T13:02:18+00:00`
