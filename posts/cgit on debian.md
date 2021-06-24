@@ -21,10 +21,11 @@ apt install cgit
 ``` shell
 /etc/cgitrc # man cgitrc
 
-/etc/apache2/config-enable
+/etc/apache2/config-enable/cgit.conf
 ```
 
 also need to enable apache2 cgi.load
+`/etc/apache2/mods-enabled/cgi.load`
 
 ### lib
 
