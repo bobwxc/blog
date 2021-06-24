@@ -80,6 +80,8 @@ Welcome to my small blog!!!
 
 - [gnupg 加解密签名](./html/gnupg%20加解密签名.md.html)
 
+- [gpg-key](./html/gpg-key.md.html)
+
 - [grub2各种手动命令引导](./html/grub2各种手动命令引导.md.html)
 
 - [hexo-hello-world](./html/hexo-hello-world.md.html)
@@ -147,8 +149,6 @@ Welcome to my small blog!!!
 - [vim替换](./html/vim替换.md.html)
 
 - [wordlist](./html/wordlist.md.html)
-
-- [yeah](./html/yeah.md.html)
 
 - [三坑圈的两件事](./html/三坑圈的两件事.md.html)
 
@@ -269,4 +269,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-06-10T13:02:18+00:00`
+Generate Time: `2021-06-24T05:39:19+00:00`
