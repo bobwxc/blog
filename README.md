@@ -162,6 +162,10 @@ Welcome to my small blog!!!
 
 - [中国中波广播电台频率表2020](./html/中国中波广播电台频率表2020.md.html)
 
+- [中国共产党一百年大事记](./html/中国共产党一百年大事记.pdf.html)
+
+- [中国共产党一百年大事记](./html/中国共产党一百年大事记.tex.html)
+
 - [书房](./html/书房.md.html)
 
 - [使用JavaScript解析URL的方法示例](./html/使用JavaScript解析URL的方法示例.md.html)
@@ -273,4 +277,4 @@ Welcome to my small blog!!!
 
 Made with [BASH](https://www.gnu.org/software/bash/) and [Pandoc](https://www.pandoc.org/).
 
-Generate Time: `2021-06-25T15:07:53+00:00`
+Generate Time: `2021-06-29T14:57:03+00:00`
